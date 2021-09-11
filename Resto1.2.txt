@@ -1,0 +1,45 @@
+AFFICHER "Quelle est votre age ?"
+VARIABLE age = LIRE_SAISIE_CLAVIER
+
+AFFICHER "De combien voulez vous créditer votre compte ?"
+VARIABLE credit = LIRE_SAISIE_CLAVIER
+
+AFFICHER "Que voulez vous ?"
+AFFICHER "1 - Boisson non-alcoolisée : 5€"
+AFFICHER "2 - Boisson alcoolisée : 8€"
+AFFICHER "3 - Plat : 20€"
+AFFICHER "Appuyer sur la vignette de votre choix : "
+
+VARIABLE choix = LIRE_SAISIE_CLAVIER
+
+SI choix == 1 {
+    SI credit >= 5 {
+        AFFICHER "Commande acceptée"
+    }
+    SINON {
+        AFFICHER "Commande refusée, crédit insuffisant"
+    }
+}
+SINON SI choix == 2{
+    SI age < 18 {
+        AFFICHER "Commande refusée, vous n'avez pas l'age legale"
+    } 
+    SINON SI credit < 8 {
+        AFFICHER "Commande refusée, vous n'avez pas assez de credit"
+    }
+    SINON {
+        credit = credit - 8
+        AFFICHER "Commande acceptée"
+    }
+}
+SINON SI choix == 3 {
+    SI credit >= 20 {
+        AFFICHER "Commande acceptée"
+    }
+    SINON {
+        AFFICHER "Commande refusée, vous n'avez pas assez de credit"
+    }
+}
+
+AFFICHER "Il vous reste $credit"
+AFFICHER "Bon appetit"
