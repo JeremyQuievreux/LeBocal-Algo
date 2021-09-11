@@ -64,7 +64,7 @@ SI choix == 1{
             SI true {
                 AFFICHER "Fin 2"
                 AFFICHER "Vous avez battu le Minautore, vous allez recuperer votre couronne
-                          et vous voyez la gravure dessus, vous etes maintenant roi des
+                          et vous voyez la gravure dessus, vous etes maintenant roi des 
                           royaume du SUD.
             }
             SINON{
