@@ -30,20 +30,46 @@ SI choix == 1{
         AFFICHER    "2 - Vous choisissez la Porte 2"
         SI choix == 1 {
             AFFICHER "Etape 4.1"
-            SI true {
+            AFFICHER "Vous avez choisi la porte 1"
+            AFFICHER "Vous voila dans la derniere salle, la couronne et le nom 
+                      de votre royaume sont devant vous, mais un troll des 
+                      forets sort et vous attaque. 
+                      Pour combattre commencez par lancer un des 10 faces, cela 
+                      vous donnera la puissance du Troll."
+            VARIABLE boss_atk = USER_INPUT_BOSS
+            AFFICHER "Puis lancez un autre des 10 faces, cela donnera votre puissance"
+            VARIABLE user_atk = USER_INPUT_USER
+            SI user_atk >= boss_atk {
                 AFFICHER "Fin 1"
+                AFFICHER "Vous avez battu le Troll, vous allez recuperer votre couronne
+                          et vous voyez la gravure dessus, vous etes maintenant roi des
+                          royaume du NORD.
             }
             SINON{
                 AFFICHER "Fin 8"(mort)
+                AFFICHER "Le Troll vous tue et recupere la couronne"
             }
         }
         SINON {
             AFFICHER "Etape 4.2
+            AFFICHER "Vous avez choisi la porte 2"
+            AFFICHER "Vous voila dans la derniere salle, la couronne et le nom 
+                      de votre royaume sont devant vous, mais un Minautore du 
+                      desert sort et vous attaque. 
+                      Pour combattre commencez par lancer un des 10 faces, cela 
+                      vous donnera la puissance du Minautore."
+            VARIABLE boss_atk = USER_INPUT_BOSS
+            AFFICHER "Puis lancez un autre des 10 faces, cela donnera votre puissance"
+            VARIABLE user_atk = USER_INPUT_USER
             SI true {
                 AFFICHER "Fin 2"
+                AFFICHER "Vous avez battu le Minautore, vous allez recuperer votre couronne
+                          et vous voyez la gravure dessus, vous etes maintenant roi des
+                          royaume du SUD.
             }
             SINON{
                 AFFICHER "Fin 8"(mort)
+                AFFICHER "Le Minautore vous tue et recupere la couronne"
             }
         }
     } SINON{
@@ -113,6 +139,11 @@ SI choix == 1{
         }
     } SINON {
         AFFICHER 3.3
+        AFFICHER    "Vous avez choisi la porte 2 , vous voila dans une nouvelle salle"
+        AFFICHER    "Devant il y a encore 2 porte"
+        AFFICHER    "Quelle porte voulez vous enprunter ?"
+        AFFICHER    "1 - Vous choisissez la Porte 1"
+        AFFICHER    "2 - Vous choisissez la Porte 2"
         SI choix = 1 {
             AFFICHER 4.6
             SI true {
