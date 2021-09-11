@@ -1,3 +1,5 @@
+https://g.co/kgs/YwXiT8
+
 AFFICHER    "Le Tournois des Champions"
 AFFICHER    "Bienvenue, vous allez incarer un héro, désirant gagner,"
 AFFICHER    "le Tournois des Champions. Pour le gagnez vous devrez "
