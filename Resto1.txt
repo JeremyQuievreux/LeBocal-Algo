@@ -1,0 +1,121 @@
+AFFICHER "Quelle est votre age ?"
+
+VARIABLE age = LIRE_SAISIE_CLAVIER
+
+AFFICHER "De combien voulez vous créditer votre compte ?"
+
+VARIABLE credit = LIRE_SAISIE_CLAVIER
+
+AFFICHER "Que voulez vous ?"
+AFFICHER "1 - Boisson non-alcoolisée : 5€"
+AFFICHER "2 - Boisson alcoolisée : 8€"
+AFFICHER "3 - Plat : 20€"
+
+VARIABLE choix = LIRE_SAISIE_CLAVIER
+
+SI choix == 1 && credit >= 5 {
+    credit = credit - 5
+    AFFICHER "Commande acceptée"
+}
+SINON {
+    AFFICHER "Commande refusée, crédit insuffisant"
+}
+
+SI choix == 2 && credit >= 8 && age >= 18 {
+    credit = credit - 8
+    AFFICHER "Commande acceptée"
+}
+SINON {
+    AFFICHER "Commande refusée"
+}
+
+SI choix == 3 && credit >= 20 {
+    credit = credit - 20
+    AFFICHER "Commande acceptée"
+}
+SINON {
+    AFFICHER "Commande refusée, crédit insuffisant"
+}
+
+AFFICHER "il vous reste $credit"
+AFFICHER "Bon Appetit"
+
+
+----------------V2--------------------
+
+SI choix == 1 {
+    SI credit >= 5{
+        credit = credit - 5
+        AFFICHER "Commande acceptée"
+    }
+    SINON {
+        AFFICHER "Commande refusée, crédit insuffisant" 
+    }
+} SINON SI choix == 2 {
+    SI credit >= 8 && age >= 18{
+        credit = credit - 8
+        AFFICHER "Commande acceptée"
+    }
+    SINON {
+        AFFICHER "Commande refusée"
+    }
+} SINON SI choix == 3{
+    SI credit >= 20 {
+        credit = credit - 20
+        AFFICHER "Commande acceptée"
+    }
+    SINON {
+        AFFICHER "Commande refusée, crédit insuffisant"
+    }
+}
+
+AFFICHER "il vous reste $credit"
+AFFICHER "Bon Appetit"
+
+-------------V3-------------------
+AFFICHER "Quelle est votre age ?"
+
+VARIABLE age = LIRE_SAISIE_CLAVIER
+
+AFFICHER "De combien voulez vous créditer votre compte ?"
+
+VARIABLE credit = LIRE_SAISIE_CLAVIER
+
+AFFICHER "Que voulez vous ?"
+AFFICHER "1 - Boisson non-alcoolisée : 5€"
+AFFICHER "2 - Boisson alcoolisée : 8€"
+AFFICHER "3 - Plat : 20€"
+
+VARIABLE choix = LIRE_SAISIE_CLAVIER
+
+SI choix == 1 && credit >= 5 {
+    credit = credit - 5
+    AFFICHER "Commande acceptée"
+}
+SINON {
+    AFFICHER "Commande refusée, crédit insuffisant"
+}
+*****************************************************
+SI choix == 2 && age >= 18 {
+    SI credit >= 8 {
+        credit = credit - 8
+        AFFICHER "Commande acceptée"
+    }
+    SINON {
+        AFFICHER "Commande refusée, pas accés de credit !!!"
+    }
+}   SINON {
+    AFFICHER " Commande refusée, vous n'avez pas l'age legal !!!"
+    }
+}
+*****************************************************
+SI choix == 3 && credit >= 20 {
+    credit = credit - 20
+    AFFICHER "Commande acceptée"
+}
+SINON {
+    AFFICHER "Commande refusée, crédit insuffisant"
+}
+
+AFFICHER "il vous reste $credit"
+AFFICHER "Bon Appetit"

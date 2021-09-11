@@ -1,0 +1,41 @@
+1 - Prendre 1°carte
+
+2 - Poser au milieux
+
+3 - Prendre Carte Suivante
+
+    3.1 - Si carte go  etape 4
+
+    3.5 - Si pas carte go etape 5
+
+4 - Comparer sa valeur avec la premiere carte posée
+
+    4.1 - Si valeur plus grande , y'a t'il une carte a droite
+
+        4.1.1 - si oui comparer sa valeur
+
+            4.1.1.1 - si plus grande go 4.1
+
+            4.1.1.2 - si plus petite poser carte
+
+            4.1.1.3 - go etape 3
+
+        4.1.2 - si non poser carte
+
+        4.1.3 - go etape 3
+
+    4.2 - Si valeur plus petite , y'a t'il une carte à gauche
+
+        4.2.1 - si oui go comparer sa valeur
+
+            4.2.1.1 - si plus petie go etape 4.2
+
+            4.2.1.2 - si plus grande poser carte
+
+            4.2.1.3 - go etape 3
+
+        4.2.2 - si non poser carte
+
+        4.2.3 - go etape 3
+        
+5 - Finis cartes rangées

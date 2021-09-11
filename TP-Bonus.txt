@@ -1,0 +1,77 @@
+AFFICHER "Message de bienvenue + histoire"
+
+EFFACER ECRAN
+
+AFFICHER "Porte 1 ou Porte 2 ?"
+
+VARIABLE atk = 0
+VARIABLE endu = 0
+
+VARIABLE choix = USER_INPUT
+
+SI choix == 1{
+
+    AFFICHER "Etape 2.1"
+
+    SI choix == 1 {
+
+        AFFICHER "Etape 3.1"
+
+        SI choix == 1 {
+
+            AFFICHER "Etape 4.1"
+
+            SI true {
+                AFFICHER "Fin 1"
+            }
+            SINON{
+                AFFICHER "Fin 8"(mort)
+            }
+        }
+        SINON {
+            AFFICHER "Etape 4.2
+
+            SI true {
+                AFFICHER "Fin 2"
+            }
+            SINON{
+                AFFICHER "Fin 8"(mort)
+            }
+        }
+    } SINON{
+        AFFICHER "3.2"
+        
+        SI choix == 1 {
+
+            AFFICHER 4.3
+
+            SI true {
+                AFFICHER "Fin 2"
+            }
+            SINON{
+                AFFICHER "Fin 8"(mort)
+            }
+
+        } SINON SI choix == 2{
+
+            AFFICHER 4.4
+
+            SI true {
+                AFFICHER "Fin 2"
+            }
+            SINON{
+                AFFICHER "Fin 8"(mort)
+            }
+        } SINON {
+
+            AFFICHER 4.5
+
+            SI true {
+                AFFICHER "Fin 2"
+            }
+            SINON{
+                AFFICHER "Fin 8"(mort)
+            }
+        }
+    }
+}
