@@ -1,26 +1,35 @@
-AFFICHER "Message de bienvenue + histoire"
+AFFICHER   "Bienvenue dans le labyrinthe de l'Attribution Royal,
+            vous etes un prince/princesse, qui est en age de passer
+            le test du labyrinthe de l'Attribution Royal. Vous allez
+            passé de salle en salle et faire des choix qui vous 
+            guiderons vers une des salles final, où apres une epreuve, 
+            une region du royaume vous sera attribuée"
 
 EFFACER ECRAN
 
-AFFICHER "Porte 1 ou Porte 2 ?"
-
-VARIABLE atk = 0
-VARIABLE endu = 0
+AFFICHER    "Vous voila dans le premiere salle, il y a 2 portes."
+AFFICHER    "Quelle porte voulez vous enprunter ?"
+AFFICHER    "1 - Vous choisissez la Porte 1"
+AFFICHER    "2 - Vous choisissez la Porte 2"
 
 VARIABLE choix = USER_INPUT
 
 SI choix == 1{
-
     AFFICHER "Etape 2.1"
-
+    AFFICHER    "Vous avez choisi la porte 1 , vous voila dans une nouvelle salle"
+    AFFICHER    "Devant il y a encore 2 porte"
+    AFFICHER    "Quelle porte voulez vous enprunter ?"
+    AFFICHER    "1 - Vous choisissez la Porte 1"
+    AFFICHER    "2 - Vous choisissez la Porte 2"
     SI choix == 1 {
-
         AFFICHER "Etape 3.1"
-
+        AFFICHER    "Vous avez choisi la porte 1 , vous voila dans une nouvelle salle"
+        AFFICHER    "Devant il y a encore 2 porte"
+        AFFICHER    "Quelle porte voulez vous enprunter ?"
+        AFFICHER    "1 - Vous choisissez la Porte 1"
+        AFFICHER    "2 - Vous choisissez la Porte 2"
         SI choix == 1 {
-
             AFFICHER "Etape 4.1"
-
             SI true {
                 AFFICHER "Fin 1"
             }
@@ -30,7 +39,6 @@ SI choix == 1{
         }
         SINON {
             AFFICHER "Etape 4.2
-
             SI true {
                 AFFICHER "Fin 2"
             }
@@ -39,23 +47,23 @@ SI choix == 1{
             }
         }
     } SINON{
-        AFFICHER "3.2"
-        
+        AFFICHER "3.2"  
+        AFFICHER    "Vous avez choisi la porte 2 , vous voila dans une nouvelle salle"
+        AFFICHER    "Devant il y a encore 3 portes"
+        AFFICHER    "Quelle porte voulez vous enprunter ?"
+        AFFICHER    "1 - Vous choisissez la Porte 1"
+        AFFICHER    "2 - Vous choisissez la Porte 2"      
+        AFFICHER    "3 - Vous choisissez la Porte 3"      
         SI choix == 1 {
-
             AFFICHER 4.3
-
             SI true {
                 AFFICHER "Fin 2"
             }
             SINON{
                 AFFICHER "Fin 8"(mort)
             }
-
         } SINON SI choix == 2{
-
             AFFICHER 4.4
-
             SI true {
                 AFFICHER "Fin 2"
             }
@@ -63,14 +71,61 @@ SI choix == 1{
                 AFFICHER "Fin 8"(mort)
             }
         } SINON {
-
             AFFICHER 4.5
-
             SI true {
                 AFFICHER "Fin 2"
             }
             SINON{
                 AFFICHER "Fin 8"(mort)
+            }
+        }
+    }
+} SINON {
+    AFFICHER 2.2
+    AFFICHER    "Vous avez choisi la porte 2 , vous voila dans une nouvelle salle"
+    AFFICHER    "Devant il y a encore 2 porte"
+    AFFICHER    "Quelle porte voulez vous enprunter ?"
+    AFFICHER    "1 - Vous choisissez la Porte 1"
+    AFFICHER    "2 - Vous choisissez la Porte 2"
+    SI choix = 1 {
+        AFFICHER 3.2
+        SI choix = 1 {
+            AFFICHER 4.3
+            SI true {
+                AFFICHER fin3
+            } SINON{
+                AFFICHER fin8 (mort)
+            }
+        } SINON SI choix = 2{
+            AFFICHER 4.4
+            SI true {
+                AFFICHER fin3
+            } SINON{
+                AFFICHER fin8 (mort)
+            }
+        } SINON {
+            AFFICHER 4.5
+            SI true {
+                AFFICHER fin3
+            } SINON{
+                AFFICHER fin8 (mort)
+            }
+        }
+    } SINON {
+        AFFICHER 3.3
+        SI choix = 1 {
+            AFFICHER 4.6
+            SI true {
+                AFFICHER fin3
+            } SINON{
+                AFFICHER fin8 (mort)
+            }
+        } SINON {
+            AFFICHER 4.7
+            SI true {
+                AFFICHER fin3
+            } SINON{
+                AFFICHER fin8 (mort)
             }
         }
     }
