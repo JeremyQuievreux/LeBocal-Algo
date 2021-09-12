@@ -8,77 +8,100 @@ VARIABLE continuer = "oui"
 
 TANT QUE continuer == "oui"{
 
-    TANT QUE credit < 5 {
+    TANT QUE credit < 5 || add_credit != "2"{
         AFFICHER "Vous n'avez pas assez de crédit, si vous voulez commander"
-        AFFICHER "créditez votre carte."
+        AFFICHER "créditez votre carte."        
 
-        AFFICHER "De combien voulez vous créditer votre compte ?"
-        credit = credit + LIRE_SAISIE_CLAVIER
+        VARIABLE add_credit 
+
+        TANT QUE add_credit != 1 || add_credit != 2 {
+            AFFICHER "Voulez vous crediter votre compte ? "
+            AFFICHER "1 - Oui"
+            AFFICHER "2 - Non"    
+
+            add_credit = LIRE_SAISIE_CLAVIER
+
+            Si add_credit == 1 {
+                AFFICHER "De combien voulez vous créditer votre compte ?"
+                credit = credit + LIRE_SAISIE_CLAVIER    
+            } SINON {
+                continuer = "non"
+            }
+        }        
     }
 
-    AFFICHER "Que voulez vous ?"
-    AFFICHER "1 - Boisson non-alcoolisée : 5€"
-    AFFICHER "2 - Boisson alcoolisée : 8€"
-    AFFICHER "3 - Plat : 20€"
-    AFFICHER "Entrez votre choix sur le pavé numérique : "
+    TANT QUE continuer = "oui"{
 
-    choix = LIRE_SAISIE_CLAVIER 
-
-    TANT QUE choix != 1 || choix != 2 || choix != 3{
-
-        AFFICHER "Choix incorrecte veuillez ré-essayer.
         AFFICHER "Que voulez vous ?"
         AFFICHER "1 - Boisson non-alcoolisée : 5€"
         AFFICHER "2 - Boisson alcoolisée : 8€"
         AFFICHER "3 - Plat : 20€"
+        AFFICHER "4 - Quitter"
         AFFICHER "Entrez votre choix sur le pavé numérique : "
 
-        choix = LIRE_SAISIE_CLAVIER    
-    }  
+        choix = LIRE_SAISIE_CLAVIER 
 
-    SI choix == 1 {
-        SI credit >= 5 {
-            AFFICHER "Commande acceptée"
-        }
-        SINON {
-            AFFICHER "Commande refusée, crédit insuffisant"
-        }
-    }
-    SINON SI choix == 2{
-        SI age < 18 {
-            AFFICHER "Commande refusée, vous n'avez pas l'age legale"
-        } 
-        SINON SI credit < 8 {
-            AFFICHER "Commande refusée, vous n'avez pas assez de credit"
-        }
-        SINON {
-            credit = credit - 8
-            AFFICHER "Commande acceptée"
-        }
-    }
-    SINON SI choix == 3 {
-        SI credit >= 20 {
-            AFFICHER "Commande acceptée"
-        }
-        SINON {
-            AFFICHER "Commande refusée, vous n'avez pas assez de credit"
-        }
-    }
+        TANT QUE choix != 1 || choix != 2 || choix != 3 || choix != 4{
 
-    VARIABLE commander
+            AFFICHER "Choix incorrecte veuillez ré-essayer.
+            AFFICHER "Que voulez vous ?"
+            AFFICHER "1 - Boisson non-alcoolisée : 5€"
+            AFFICHER "2 - Boisson alcoolisée : 8€"
+            AFFICHER "3 - Plat : 20€"
+            AFFICHER "4 - Quitter"
+            AFFICHER "Entrez votre choix sur le pavé numérique : "
 
-    TANT QUE commander != 1 || commander != 2 {
-        AFFICHER "Voulez vous encore commander ?"
-        AFFICHER "1 - Oui"
-        AFFICHER "2 - Non"
+            choix = LIRE_SAISIE_CLAVIER    
+        }  
 
-        commander = LIRE_SAISIE_CLAVIER
-    }
+        SI choix == 1 {
+            SI credit >= 5 {
+                credit = credit - 5
+                AFFICHER "Commande acceptée"
+            }
+            SINON {
+                AFFICHER "Commande refusée, crédit insuffisant"
+            }
+        }
+        SINON SI choix == 2{
+            SI age < 18 {
+                AFFICHER "Commande refusée, vous n'avez pas l'age legale"
+            } 
+            SINON SI credit < 8 {
+                AFFICHER "Commande refusée, vous n'avez pas assez de credit"
+            }
+            SINON {
+                credit = credit - 8
+                AFFICHER "Commande acceptée"
+            }
+        }
+        SINON SI choix == 3 {
+            SI credit >= 20 {
+                credit = credit - 20
+                AFFICHER "Commande acceptée"
+            }
+            SINON {
+                AFFICHER "Commande refusée, vous n'avez pas assez de credit"
+            }
+        } SINON {
+            continuer = "non"
+        }
 
-    SI commander == 1 {
-        continuer = "oui"
-    } SINON {
-        continuer = "non"
+        VARIABLE commander
+
+        TANT QUE commander != 1 || commander != 2 && continuer == "oui"{
+            AFFICHER "Voulez vous encore commander ?"
+            AFFICHER "1 - Oui"
+            AFFICHER "2 - Non"
+
+            commander = LIRE_SAISIE_CLAVIER
+        }
+
+        SI commander == 1 {
+            continuer = "oui"
+        } SINON {
+            continuer = "non"
+            }
         }
     }
 }
