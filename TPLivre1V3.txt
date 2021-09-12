@@ -1,0 +1,761 @@
+https://g.co/kgs/YwXiT8
+
+AFFICHER    "Le Tournois des Champions"
+AFFICHER    "Bienvenue, vous allez incarer un héro, désirant gagner,"
+AFFICHER    "le Tournois des Champions. Pour le gagnez vous devrez "
+AFFICHER    "progresser de salle en salle, dans chacune d'elle un adversaire"
+AFFICHER    "vous y attend, vous devrez le vaincre pour progresser dans"
+AFFICHER    "la salle suivant. Cela jusqu'a une defaite de votre part (ca "
+AFFICHER    "sera pour une prochaine fois), ou jusquà vaincre le Champion"
+AFFICHER    "tenant du titre."
+
+AFFICHER    "Pour combattre vous avez un dé a 12 faces, le resultat determinera"
+AFFICHER    "la puissance de votre attaque.Si le premier jet ne vous convient pas"
+AFFICHER    "vous avez le droit d'en faire un 2eme, ce qui annulera le 1er,"
+AFFICHER    "reflechissez bien avec de faire votre 2eme jet.
+
+AFFICHER    "Pour déterminer la puissance de votre adversaire, vous devrez faire un"
+AFFICHER    "jet de dé a 10 faces."
+
+EFFACER ECRAN ********************************************************************
+
+AFFICHER    "Le Tournois commence, vous voila dans la premiere Arene face a votre"
+AFFICHER    "premier adversaire , un Minautore"
+AFFICHER    "Faite votre jet de dé et entrez le résultat : "
+
+VARIABLE user_atk = INPUT_USER_ATK
+
+AFFICHER    "Faite le lancer de dé de votre adversaire et entrez le résultat : "
+
+VARIABLE boss_atk = INPUT_USER_BOSS
+
+SI user_atk >= boss_atk {
+    AFFICHER    "Vous venez de battre le Minautore, cela vous permet de passé à la"
+    AFFICHER    "arène suivante. Mais un choix s'offre a vous, devant vous il y a 2"
+    AFFICHER    "porte face a vous.Fait un jet de dé 6 faces pour déterminer quelle"
+    AFFICHER    "porte vous allez franchir"
+    AFFICHER    "Résultat du jet de dé : "
+
+    VARIABLE result = INPUT_USER_DE
+    
+    SI result <= 3 {
+        (salle 2.1)
+        AFFICHER    "Vous franchissez la porte 1, face a vous ce dresse un Centaure."
+        AFFICHER    "Place au combat, faite votre jet de dé. Et entrez le"
+        AFFICHER    "résultat :"
+
+        user_atk = INPUT_USER_ATK
+
+        AFFICHER    "Faite le lancer de dé de votre adversaire et entrez le résultat : "
+
+        boss_atk = INPUT_USER_BOSS
+
+        SI user_atk >= boss_atk{
+            AFFICHER    "Vous venez de battre le Centaure, cela vous permet de passé à la"
+            AFFICHER    "arène suivante."
+            (salle 3)
+            AFFICHER    "Vous franchissez la porte et arrivez dans une autre aréne et vous"
+            AFFICHER    "retrouvez face à un Squelette en armure"
+            AFFICHER    "Place au combat, faite votre jet de dé. Et entrez le"
+            AFFICHER    "résultat :"
+            user_atk = INPUT_USER_ATK
+
+            AFFICHER    "Faite le lancer de dé de votre adversaire et entrez le résultat : "
+
+            boss_atk = INPUT_USER_BOSS
+
+            SI user_atk >= boss_atk{
+                AFFICHER    "Vous venez de battre le Squelette, cela vous permet de passé à la"
+                AFFICHER    "arène suivante. Mais un choix s'offre a vous, devant vous il y a 2"
+                AFFICHER    "porte face a vous.Fait un jet de dé 6 faces pour déterminer quelle"
+                AFFICHER    "porte vous allez franchir"
+                AFFICHER    "Résultat du jet de dé : "
+
+                VARIABLE result = INPUT_USER_DE
+
+                SI result <= 3 {
+                    (salle 4.1)
+                    AFFICHER "Vous franchissez la porte 1, et vous retrouvez face à un Vampire"
+                    AFFICHER "Que le combat commence ! Faite votre jet de dé et entrez le resultat :"
+
+                    user_atk = INPUT_USER_ATK
+
+                    AFFICHER "Faite le lancer de dé de votre adversaire et entrez le résultat : "
+
+                    boss_atk = INPUT_USER_BOSS
+
+                    SI user_atk >= boss_atk {
+                        AFFICHER "Vous venez de battre le Vampire, cela vous permet de passé à l"
+                        AFFICHER "arène suivante.
+                        (salle 5)
+                        AFFICHER "Vous franchissez la porte de l'arène et vous retrouvez face à un"
+                        AFFICHER "Sphinx. Que le combat commence ! Faite votre jet de dé "
+                        AFFICHER "et entrez le résultat : "
+
+                        user_atk = INPUT_USER_ATK
+
+                        AFFICHER "Faite le lancer de dé de votre adversaire et entrez le résultat : "
+
+                        boss_atk = INPUT_USER_BOSS
+
+                        SI user_atk >= boss_atk {
+                            AFFICHER "Vous venez de battre le Sphinx, cela vous permet de passé à l'arène"
+                            AFFICHER "suivante. Mais un choix s'offre a vous, devant vous il y a 2"
+                            AFFICHER "portes. Faite un jet de dé 6 faces pour déterminez quelle"
+                            AFFICHER "porte vous allez franchir"
+                            AFFICHER "Résultat du jet de dé : "
+
+                            result = INPUT_USER_DE
+
+                            SI result <= 3 {
+                                (salle 6.1)
+                                AFFICHER "Vous arrivez dans la nouvelle arène, et vous retrouvez face à un"
+                                AFFICHER " CERBERE. Que le combat commence ! Faite votre jet de dé"
+                                AFFICHER "et entrez le résultat : "
+
+                                user_atk = INPUT_USER_ATK
+
+                                AFFICHER "Faite le lancer de dé de votre adversaire et entrez le résultat : "
+
+                                boss_atk = INPUT_USER_BOSS
+                                ***
+                                SI user_atk >= boss_atk {
+                                    AFFICHER "Vous venez de battre le CERBERE, cela vous donne le droit de passer"
+                                    AFFICHER "a l'arène suivante.
+                                    (salle 7)
+                                    AFFICHER "Vous arrivez dans une nouvelle arène, et vous retrouvez face à un"
+                                    AFFICHER "Roi Viking.Que le combat commence !Faite votre jet de dé"
+                                    AFFICHER "et entrez le résultat : "
+
+                                    user_atk = INPUT_USER_ATK
+
+                                    AFFICHER "Faite le jet de dé de votre adversaire et entrez le résultat : "
+
+                                    boss_atk = INPUT_USER_BOSS
+
+                                    SI user_atk >= boss_atk {
+                                        AFFICHER "Vous battez le Roi Viking, cela vous donne le droit de passer à"
+                                        AFFICHER "l'arène sivant."
+                                        (salle 8)
+                                        AFFICHER "Vous arrivez dans la derniere arène et vous retrouvez face à un Spartiate"
+                                        AFFICHER "Que le combat commence ! Fait votre jet de dé et entrez le résultat :"
+
+                                        user_atk = INPUT_USER_ATK
+
+                                        AFFICHER "Faite le jet de dé de votre adversaire et entrez le résultat :"
+
+                                        boss_atk = INPUT_USER_BOSS
+
+                                        SI user_atk >= boss_atk {
+                                            AFFICHER "Vous battez le Spatiate et devenez le champion en titre, vous"
+                                            AFFICHER "optenez le titre de Grand Champion"
+                                        } SINON {
+                                            AFFICHER "Le Spartiate vous bat, vous etes éliminé du tournois et recevez le titre"
+                                            AFFICHER "de Champion de DIAMANT"
+                                        }
+                                    } SINON {
+                                        AFFICHER "Le Roi des Viking vous bat et vous etez éliminé du tournois, mais recevez le titre"
+                                        AFFICHER "de Champion de PLATINE"
+                                    }
+                                } SINON {
+                                    AFFICHER "Le CERBERE vous a battu, et vous etes éliminé du tournois, vous"
+                                    AFFICHER "recevez le titre de "Champion d'OR"
+                                    AFFICHER "Vous ferez mieux la prochaine fois"
+                                }
+                            } SINON {
+                                (salle 6.2)
+                                AFFICHER "Vous arrivez dans la nouvelle arène, et vous retrouvez face à un "
+                                AFFICHER "GRIFFON. Que le combat commence ! Faite votre jet de dé"
+                                AFFICHER "et entrez le résultat : "
+
+                                user_atk = INPUT_USER_ATK
+
+                                AFFICHER "Faite le jet de dé de votre adversaire et entrez le résultat : "
+
+                                boss_atk = INPUT_USER_BOSS
+
+                                SI user_atk >= boss_atk {
+                                    AFFICHER "Vous venez de battre le GRIFFON, cela vous donne le droit de passer"
+                                    AFFICHER "a l'arène suivante"
+                                    (salle 7)
+                                    AFFICHER "Vous arrivez dans une nouvelle arène, et vous retrouvez face à un"
+                                    AFFICHER "Roi Viking.Que le combat commence !Faite votre jet de dé"
+                                    AFFICHER "et entrez le résultat : "
+
+                                    user_atk = INPUT_USER_ATK
+
+                                    AFFICHER "Faite le jet de dé de votre adversaire et entrez le résultat : "
+
+                                    boss_atk = INPUT_USER_BOSS
+
+                                    SI user_atk >= boss_atk {
+                                        AFFICHER "Vous battez le Roi Viking, cela vous donne le droit de passer à"
+                                        AFFICHER "l'arène sivant."
+                                        (salle 8)
+                                        AFFICHER "Vous arrivez dans la derniere arène et vous retrouvez face à un Spartiate"
+                                        AFFICHER "Que le combat commence ! Fait votre jet de dé et entrez le résultat :"
+
+                                        user_atk = INPUT_USER_ATK
+
+                                        AFFICHER "Faite le jet de dé de votre adversaire et entrez le résultat :"
+
+                                        boss_atk = INPUT_USER_BOSS
+
+                                        SI user_atk >= boss_atk {
+                                            AFFICHER "Vous battez le Spatiate et devenez le champion en titre, vous"
+                                            AFFICHER "optenez le titre de Grand Champion"
+                                        } SINON {
+                                            AFFICHER "Le Spartiate vous bat, vous etes éliminé du tournois et recevez le titre"
+                                            AFFICHER "de Champion de DIAMANT"
+                                        }
+                                    } SINON {
+                                        AFFICHER "Le Roi des Viking vous bat et vous etez éliminé du tournois, mais recevez le titre"
+                                        AFFICHER "de Champion de PLATINE"
+                                    }
+                                }SINON {
+                                    AFFICHER "Le GRIFFON vous a battu, et vous etes éliminé du tournois, vous"
+                                    AFFICHER "recevez le titre de "Champion d'OR"
+                                    AFFICHER "Vous ferez mieux la prochaine fois ;)"
+                                }
+                            }
+                        } SINON {
+                            AFFICHER "Le Sphinx vous bat et vous etes éliminé, mais vous recevez le titre"
+                            AFFICHER "de Champion d'ARGENT"
+                            AFFICHER "Vous ferez mieux la prochaine fois ;)"
+                        }
+                    } SINON {
+                        AFFICHER "Le Vampire vous a battu, et vous etes éliminé du tournois, vous
+                        AFFICHER "recevez le titre de "Champion de BRONZE"
+                        AFFICHER "Vous ferez mieux la prochaine fois ;)"
+                    }
+                } SINON {
+                    (salle 4.2)
+                    AFFICHER "Vous franchissez la porte 2, et vous retrouvez face à une siréne"
+                    AFFICHER "Que le combat commence ! Faite votre jet de dé et entrez le resultat :"
+
+                    user_atk = INPUT_USER_ATK
+
+                    AFFICHER "Faite le lancer de dé de votre adversaire et entrez le résultat : "
+
+                    boss_atk = INPUT_USER_BOSS
+                    SI user_atk >= boss_atk {
+                        AFFICHER    "Vous venez de battre le Sirene, cela vous permet de passé à l'"
+                        AFFICHER    "arène suivante.***
+                        (salle 5)
+                        AFFICHER "Vous franchissez la porte de l'arène et vous retrouvez face à un"
+                        AFFICHER "Sphinx. Que le combat commence ! Faite votre jet de dé "
+                        AFFICHER "et entrez le résultat : "
+
+                        user_atk = INPUT_USER_ATK
+
+                        AFFICHER "Faite le lancer de dé de votre adversaire et entrez le résultat : "
+
+                        boss_atk = INPUT_USER_BOSS
+
+                        SI user_atk >= boss_atk {
+                            AFFICHER "Vous venez de battre le Sphinx, cela vous permet de passé à l'arène"
+                            AFFICHER "suivante. Mais un choix s'offre a vous, devant vous il y a 2"
+                            AFFICHER "portes. Faite un jet de dé 6 faces pour déterminez quelle"
+                            AFFICHER "porte vous allez franchir"
+                            AFFICHER "Résultat du jet de dé : "
+
+                            result = INPUT_USER_DE
+
+                            SI result <= 3 {
+                                (salle 6.1)
+                                AFFICHER "Vous arrivez dans la nouvelle arène, et vous retrouvez face à un"
+                                AFFICHER " CERBERE. Que le combat commence ! Faite votre jet de dé"
+                                AFFICHER "et entrez le résultat : "
+
+                                user_atk = INPUT_USER_ATK
+
+                                AFFICHER "Faite le lancer de dé de votre adversaire et entrez le résultat : "
+
+                                boss_atk = INPUT_USER_BOSS
+                                ***
+                                SI user_atk >= boss_atk {
+                                    AFFICHER "Vous venez de battre le CERBERE, cela vous donne le droit de passer"
+                                    AFFICHER "a l'arène suivante.
+                                    (salle 7)
+                                    AFFICHER "Vous arrivez dans une nouvelle arène, et vous retrouvez face à un"
+                                    AFFICHER "Roi Viking.Que le combat commence !Faite votre jet de dé"
+                                    AFFICHER "et entrez le résultat : "
+
+                                    user_atk = INPUT_USER_ATK
+
+                                    AFFICHER "Faite le jet de dé de votre adversaire et entrez le résultat : "
+
+                                    boss_atk = INPUT_USER_BOSS
+
+                                    SI user_atk >= boss_atk {
+                                        AFFICHER "Vous battez le Roi Viking, cela vous donne le droit de passer à"
+                                        AFFICHER "l'arène sivant."
+                                        (salle 8)
+                                        AFFICHER "Vous arrivez dans la derniere arène et vous retrouvez face à un Spartiate"
+                                        AFFICHER "Que le combat commence ! Fait votre jet de dé et entrez le résultat :"
+
+                                        user_atk = INPUT_USER_ATK
+
+                                        AFFICHER "Faite le jet de dé de votre adversaire et entrez le résultat :"
+
+                                        boss_atk = INPUT_USER_BOSS
+
+                                        SI user_atk >= boss_atk {
+                                            AFFICHER "Vous battez le Spatiate et devenez le champion en titre, vous"
+                                            AFFICHER "optenez le titre de Grand Champion"
+                                        } SINON {
+                                            AFFICHER "Le Spartiate vous bat, vous etes éliminé du tournois et recevez le titre"
+                                            AFFICHER "de Champion de DIAMANT"
+                                        }
+                                    } SINON {
+                                        AFFICHER "Le Roi des Viking vous bat et vous etez éliminé du tournois, mais recevez le titre"
+                                        AFFICHER "de Champion de PLATINE"
+                                    }
+                                } SINON {
+                                    AFFICHER "Le CERBERE vous a battu, et vous etes éliminé du tournois, vous"
+                                    AFFICHER "recevez le titre de "Champion d'OR"
+                                    AFFICHER "Vous ferez mieux la prochaine fois"
+                                }
+                            } SINON {
+                                (salle 6.2)
+                                AFFICHER "Vous arrivez dans la nouvelle arène, et vous retrouvez face à un "
+                                AFFICHER "GRIFFON. Que le combat commence ! Faite votre jet de dé"
+                                AFFICHER "et entrez le résultat : "
+
+                                user_atk = INPUT_USER_ATK
+
+                                AFFICHER "Faite le jet de dé de votre adversaire et entrez le résultat : "
+
+                                boss_atk = INPUT_USER_BOSS
+
+                                SI user_atk >= boss_atk {
+                                    AFFICHER "Vous venez de battre le GRIFFON, cela vous donne le droit de passer"
+                                    AFFICHER "a l'arène suivante"
+                                    (salle 7)
+                                    AFFICHER "Vous arrivez dans une nouvelle arène, et vous retrouvez face à un"
+                                    AFFICHER "Roi Viking.Que le combat commence !Faite votre jet de dé"
+                                    AFFICHER "et entrez le résultat : "
+
+                                    user_atk = INPUT_USER_ATK
+
+                                    AFFICHER "Faite le jet de dé de votre adversaire et entrez le résultat : "
+
+                                    boss_atk = INPUT_USER_BOSS
+
+                                    SI user_atk >= boss_atk {
+                                        AFFICHER "Vous battez le Roi Viking, cela vous donne le droit de passer à"
+                                        AFFICHER "l'arène sivant."
+                                        (salle 8)
+                                        AFFICHER "Vous arrivez dans la derniere arène et vous retrouvez face à un Spartiate"
+                                        AFFICHER "Que le combat commence ! Fait votre jet de dé et entrez le résultat :"
+
+                                        user_atk = INPUT_USER_ATK
+
+                                        AFFICHER "Faite le jet de dé de votre adversaire et entrez le résultat :"
+
+                                        boss_atk = INPUT_USER_BOSS
+
+                                        SI user_atk >= boss_atk {
+                                            AFFICHER "Vous battez le Spatiate et devenez le champion en titre, vous"
+                                            AFFICHER "optenez le titre de Grand Champion"
+                                        } SINON {
+                                            AFFICHER "Le Spartiate vous bat, vous etes éliminé du tournois et recevez le titre"
+                                            AFFICHER "de Champion de DIAMANT"
+                                        }
+                                    } SINON {
+                                        AFFICHER "Le Roi des Viking vous bat et vous etez éliminé du tournois, mais recevez le titre"
+                                        AFFICHER "de Champion de PLATINE"
+                                    }
+                                }SINON {
+                                    AFFICHER "Le GRIFFON vous a battu, et vous etes éliminé du tournois, vous"
+                                    AFFICHER "recevez le titre de "Champion d'OR"
+                                    AFFICHER "Vous ferez mieux la prochaine fois ;)"
+                                }
+                            }
+                        }  SINON {
+                            AFFICHER "Le Sphinx vous bat et vous etes éliminé, mais vous recevez le titre"
+                            AFFICHER "de Champion d'ARGENT"
+                            AFFICHER "Vous ferez mieux la prochaine fois ;)"
+                        }
+                    } SINON {
+                        AFFICHER "La Sirene vous a battu, et vous etes éliminé du tournois, vous
+                        AFFICHER "recevez le titre de "Champion de BRONZE"
+                        AFFICHER "Vous ferez mieux la prochaine fois ;)"
+                    }
+                }
+
+            } SINON {
+                AFFICHER    "Le Squelette vous a battu, et vous etes éliminé du tournois, et"
+                AFFICHER    "recevez le titre de "Champion de FER"
+                AFFICHER    "Vous ferez mieux la prochaine fois ;)"
+                }
+
+
+        } SINON {
+            AFFICHER    "Le Centaure vous a battu, et vous etes éliminé du tournois, et"
+            AFFICHER    "recevez le titre de "Champion de BOIS"
+            AFFICHER    "Vous ferez mieux la prochaine fois ;)"
+            }
+
+    } SINON {
+        (salle 2.2)
+        AFFICHER    "Vous franchissez la porte 1, face a vous ce dresse un Dragon."
+        AFFICHER    "Place au combat, faite votre jet de dé. Et entrez le"
+        AFFICHER    "résultat :"
+
+        user_atk = INPUT_USER_ATK
+
+        AFFICHER    "Faite le lancer de dé de votre adversaire et entrez le résultat : "
+
+        boss_atk = INPUT_USER_BOSS
+
+        SI user_atk >= boss_atk{
+            AFFICHER    "Vous venez de battre le Centaure, cela vous permet de passé à la"
+            AFFICHER    "arène suivante."
+            (salle 3)
+            AFFICHER    "Vous franchissez la porte et arrivez dans une autre aréne et vous"
+            AFFICHER    "retrouvez face à un Squelette en armure"
+            AFFICHER    "résultat :"
+            user_atk = INPUT_USER_ATK
+
+            AFFICHER    "Faite le lancer de dé de votre adversaire et entrez le résultat : "
+
+            boss_atk = INPUT_USER_BOSS
+
+            SI user_atk >= boss_atk{
+                AFFICHER    "Vous venez de battre le Squelette, cela vous permet de passé à la"
+                AFFICHER    "arène suivante. Mais un choix s'offre a vous, devant vous il y a 2"
+                AFFICHER    "porte face a vous.Fait un jet de dé 6 faces pour déterminer quelle"
+                AFFICHER    "porte vous allez franchir"
+                AFFICHER    "Résultat du jet de dé : "
+
+                VARIABLE result = INPUT_USER_DE
+
+                SI result <= 3 {
+                    (salle 4.1)
+                    AFFICHER "Vous franchissez la porte 1, et vous retrouvez face à un Vampire"
+                    AFFICHER "Que le combat commence ! Faite votre jet de dé et entrez le resultat :"
+
+                    user_atk = INPUT_USER_ATK
+
+                    AFFICHER "Faite le lancer de dé de votre adversaire et entrez le résultat : "
+
+                    boss_atk = INPUT_USER_BOSS
+
+                    SI user_atk >= boss_atk {
+                        AFFICHER "Vous venez de battre le Vampire, cela vous permet de passé à l"
+                        AFFICHER "arène suivante.
+                        (salle 5)
+                        AFFICHER "Vous franchissez la porte de l'arène et vous retrouvez face à un"
+                        AFFICHER "Sphinx. Que le combat commence ! Faite votre jet de dé "
+                        AFFICHER "et entrez le résultat : "
+
+                        user_atk = INPUT_USER_ATK
+
+                        AFFICHER "Faite le lancer de dé de votre adversaire et entrez le résultat : "
+
+                        boss_atk = INPUT_USER_BOSS
+
+                        SI user_atk >= boss_atk {
+                            AFFICHER "Vous venez de battre le Sphinx, cela vous permet de passé à l'arène"
+                            AFFICHER "suivante. Mais un choix s'offre a vous, devant vous il y a 2"
+                            AFFICHER "portes. Faite un jet de dé 6 faces pour déterminez quelle"
+                            AFFICHER "porte vous allez franchir"
+                            AFFICHER "Résultat du jet de dé : "
+
+                            result = INPUT_USER_DE
+
+                            SI result <= 3 {
+                                (salle 6.1)
+                                AFFICHER "Vous arrivez dans la nouvelle arène, et vous retrouvez face à un"
+                                AFFICHER " CERBERE. Que le combat commence ! Faite votre jet de dé"
+                                AFFICHER "et entrez le résultat : "
+
+                                user_atk = INPUT_USER_ATK
+
+                                AFFICHER "Faite le lancer de dé de votre adversaire et entrez le résultat : "
+
+                                boss_atk = INPUT_USER_BOSS
+                                ***
+                                SI user_atk >= boss_atk {
+                                    AFFICHER "Vous venez de battre le CERBERE, cela vous donne le droit de passer"
+                                    AFFICHER "a l'arène suivante.
+                                    (salle 7)
+                                    AFFICHER "Vous arrivez dans une nouvelle arène, et vous retrouvez face à un"
+                                    AFFICHER "Roi Viking.Que le combat commence !Faite votre jet de dé"
+                                    AFFICHER "et entrez le résultat : "
+
+                                    user_atk = INPUT_USER_ATK
+
+                                    AFFICHER "Faite le jet de dé de votre adversaire et entrez le résultat : "
+
+                                    boss_atk = INPUT_USER_BOSS
+
+                                    SI user_atk >= boss_atk {
+                                        AFFICHER "Vous battez le Roi Viking, cela vous donne le droit de passer à"
+                                        AFFICHER "l'arène sivant."
+                                        (salle 8)
+                                        AFFICHER "Vous arrivez dans la derniere arène et vous retrouvez face à un Spartiate"
+                                        AFFICHER "Que le combat commence ! Fait votre jet de dé et entrez le résultat :"
+
+                                        user_atk = INPUT_USER_ATK
+
+                                        AFFICHER "Faite le jet de dé de votre adversaire et entrez le résultat :"
+
+                                        boss_atk = INPUT_USER_BOSS
+
+                                        SI user_atk >= boss_atk {
+                                            AFFICHER "Vous battez le Spatiate et devenez le champion en titre, vous"
+                                            AFFICHER "optenez le titre de Grand Champion"
+                                        } SINON {
+                                            AFFICHER "Le Spartiate vous bat, vous etes éliminé du tournois et recevez le titre"
+                                            AFFICHER "de Champion de DIAMANT"
+                                        }
+                                    } SINON {
+                                        AFFICHER "Le Roi des Viking vous bat et vous etez éliminé du tournois, mais recevez le titre"
+                                        AFFICHER "de Champion de PLATINE"
+                                    }
+                                } SINON {
+                                    AFFICHER "Le CERBERE vous a battu, et vous etes éliminé du tournois, vous"
+                                    AFFICHER "recevez le titre de "Champion d'OR"
+                                    AFFICHER "Vous ferez mieux la prochaine fois"
+                                }
+                            } SINON {
+                                (salle 6.2)
+                                AFFICHER "Vous arrivez dans la nouvelle arène, et vous retrouvez face à un "
+                                AFFICHER "GRIFFON. Que le combat commence ! Faite votre jet de dé"
+                                AFFICHER "et entrez le résultat : "
+
+                                user_atk = INPUT_USER_ATK
+
+                                AFFICHER "Faite le jet de dé de votre adversaire et entrez le résultat : "
+
+                                boss_atk = INPUT_USER_BOSS
+
+                                SI user_atk >= boss_atk {
+                                    AFFICHER "Vous venez de battre le GRIFFON, cela vous donne le droit de passer"
+                                    AFFICHER "a l'arène suivante"
+                                    (salle 7)
+                                    AFFICHER "Vous arrivez dans une nouvelle arène, et vous retrouvez face à un"
+                                    AFFICHER "Roi Viking.Que le combat commence !Faite votre jet de dé"
+                                    AFFICHER "et entrez le résultat : "
+
+                                    user_atk = INPUT_USER_ATK
+
+                                    AFFICHER "Faite le jet de dé de votre adversaire et entrez le résultat : "
+
+                                    boss_atk = INPUT_USER_BOSS
+
+                                    SI user_atk >= boss_atk {
+                                        AFFICHER "Vous battez le Roi Viking, cela vous donne le droit de passer à"
+                                        AFFICHER "l'arène sivant."
+                                        (salle 8)
+                                        AFFICHER "Vous arrivez dans la derniere arène et vous retrouvez face à un Spartiate"
+                                        AFFICHER "Que le combat commence ! Fait votre jet de dé et entrez le résultat :"
+
+                                        user_atk = INPUT_USER_ATK
+
+                                        AFFICHER "Faite le jet de dé de votre adversaire et entrez le résultat :"
+
+                                        boss_atk = INPUT_USER_BOSS
+
+                                        SI user_atk >= boss_atk {
+                                            AFFICHER "Vous battez le Spatiate et devenez le champion en titre, vous"
+                                            AFFICHER "optenez le titre de Grand Champion"
+                                        } SINON {
+                                            AFFICHER "Le Spartiate vous bat, vous etes éliminé du tournois et recevez le titre"
+                                            AFFICHER "de Champion de DIAMANT"
+                                        }
+                                    } SINON {
+                                        AFFICHER "Le Roi des Viking vous bat et vous etez éliminé du tournois, mais recevez le titre"
+                                        AFFICHER "de Champion de PLATINE"
+                                    }
+                                }SINON {
+                                    AFFICHER "Le GRIFFON vous a battu, et vous etes éliminé du tournois, vous"
+                                    AFFICHER "recevez le titre de "Champion d'OR"
+                                    AFFICHER "Vous ferez mieux la prochaine fois ;)"
+                                }
+                            }
+                        }  SINON {
+                            AFFICHER "Le Sphinx vous bat et vous etes éliminé, mais vous recevez le titre"
+                            AFFICHER "de Champion d'ARGENT"
+                            AFFICHER "Vous ferez mieux la prochaine fois ;)"
+                        }                      
+                    } SINON {
+                        AFFICHER "Le Vampire vous a battu, et vous etes éliminé du tournois, vous
+                        AFFICHER "recevez le titre de "Champion de BRONZE"
+                        AFFICHER "Vous ferez mieux la prochaine fois ;)"
+                    }
+                } SINON {
+                    (salle 4.2)
+                    AFFICHER "Vous franchissez la porte 2, et vous retrouvez face à une siréne"
+                    AFFICHER "Que le combat commence ! Faite votre jet de dé et entrez le resultat :"
+
+                    user_atk = INPUT_USER_ATK
+
+                    AFFICHER "Faite le lancer de dé de votre adversaire et entrez le résultat : "
+
+                    boss_atk = INPUT_USER_BOSS
+                    SI user_atk >= boss_atk {
+                        AFFICHER    "Vous venez de battre la Sirene, cela vous permet de passé à la"
+                        AFFICHER    "arène suivante.***
+                        (salle 5)
+                        AFFICHER "Vous franchissez la porte de l'arène et vous retrouvez face à un"
+                        AFFICHER "Sphinx. Que le combat commence ! Faite votre jet de dé "
+                        AFFICHER "et entrez le résultat : "
+
+                        user_atk = INPUT_USER_ATK
+
+                        AFFICHER "Faite le lancer de dé de votre adversaire et entrez le résultat : "
+
+                        boss_atk = INPUT_USER_BOSS
+
+                        SI user_atk >= boss_atk {
+                            AFFICHER "Vous venez de battre le Sphinx, cela vous permet de passé à l'arène"
+                            AFFICHER "suivante. Mais un choix s'offre a vous, devant vous il y a 2"
+                            AFFICHER "portes. Faite un jet de dé 6 faces pour déterminez quelle"
+                            AFFICHER "porte vous allez franchir"
+                            AFFICHER "Résultat du jet de dé : "
+
+                            result = INPUT_USER_DE
+
+                            SI result <= 3 {
+                                (salle 6.1)
+                                AFFICHER "Vous arrivez dans la nouvelle arène, et vous retrouvez face à un"
+                                AFFICHER " CERBERE. Que le combat commence ! Faite votre jet de dé"
+                                AFFICHER "et entrez le résultat : "
+
+                                user_atk = INPUT_USER_ATK
+
+                                AFFICHER "Faite le lancer de dé de votre adversaire et entrez le résultat : "
+
+                                boss_atk = INPUT_USER_BOSS
+                                ***
+                                SI user_atk >= boss_atk {
+                                    AFFICHER "Vous venez de battre le CERBERE, cela vous donne le droit de passer"
+                                    AFFICHER "a l'arène suivante.
+                                    (salle 7)
+                                    AFFICHER "Vous arrivez dans une nouvelle arène, et vous retrouvez face à un"
+                                    AFFICHER "Roi Viking.Que le combat commence !Faite votre jet de dé"
+                                    AFFICHER "et entrez le résultat : "
+
+                                    user_atk = INPUT_USER_ATK
+
+                                    AFFICHER "Faite le jet de dé de votre adversaire et entrez le résultat : "
+
+                                    boss_atk = INPUT_USER_BOSS
+
+                                    SI user_atk >= boss_atk {
+                                        AFFICHER "Vous battez le Roi Viking, cela vous donne le droit de passer à"
+                                        AFFICHER "l'arène sivant."
+                                        (salle 8)
+                                        AFFICHER "Vous arrivez dans la derniere arène et vous retrouvez face à un Spartiate"
+                                        AFFICHER "Que le combat commence ! Fait votre jet de dé et entrez le résultat :"
+
+                                        user_atk = INPUT_USER_ATK
+
+                                        AFFICHER "Faite le jet de dé de votre adversaire et entrez le résultat :"
+
+                                        boss_atk = INPUT_USER_BOSS
+
+                                        SI user_atk >= boss_atk {
+                                            AFFICHER "Vous battez le Spatiate et devenez le champion en titre, vous"
+                                            AFFICHER "optenez le titre de Grand Champion"
+                                        } SINON {
+                                            AFFICHER "Le Spartiate vous bat, vous etes éliminé du tournois et recevez le titre"
+                                            AFFICHER "de Champion de DIAMANT"
+                                        }
+                                    } SINON {
+                                        AFFICHER "Le Roi des Viking vous bat et vous etez éliminé du tournois, mais recevez le titre"
+                                        AFFICHER "de Champion de PLATINE"
+                                    }
+                                } SINON {
+                                    AFFICHER "Le CERBERE vous a battu, et vous etes éliminé du tournois, vous"
+                                    AFFICHER "recevez le titre de "Champion d'OR"
+                                    AFFICHER "Vous ferez mieux la prochaine fois"
+                                }
+                            } SINON {
+                                (salle 6.2)
+                                AFFICHER "Vous arrivez dans la nouvelle arène, et vous retrouvez face à un "
+                                AFFICHER "GRIFFON. Que le combat commence ! Faite votre jet de dé"
+                                AFFICHER "et entrez le résultat : "
+
+                                user_atk = INPUT_USER_ATK
+
+                                AFFICHER "Faite le jet de dé de votre adversaire et entrez le résultat : "
+
+                                boss_atk = INPUT_USER_BOSS
+
+                                SI user_atk >= boss_atk {
+                                    AFFICHER "Vous venez de battre le GRIFFON, cela vous donne le droit de passer"
+                                    AFFICHER "a l'arène suivante"
+                                    (salle 7)
+                                    AFFICHER "Vous arrivez dans une nouvelle arène, et vous retrouvez face à un"
+                                    AFFICHER "Roi Viking.Que le combat commence !Faite votre jet de dé"
+                                    AFFICHER "et entrez le résultat : "
+
+                                    user_atk = INPUT_USER_ATK
+
+                                    AFFICHER "Faite le jet de dé de votre adversaire et entrez le résultat : "
+
+                                    boss_atk = INPUT_USER_BOSS
+
+                                    SI user_atk >= boss_atk {
+                                        AFFICHER "Vous battez le Roi Viking, cela vous donne le droit de passer à"
+                                        AFFICHER "l'arène sivant."
+                                        (salle 8)
+                                        AFFICHER "Vous arrivez dans la derniere arène et vous retrouvez face à un Spartiate"
+                                        AFFICHER "Que le combat commence ! Fait votre jet) de dé et entrez le résultat :"
+
+                                        user_atk = INPUT_USER_ATK
+
+                                        AFFICHER "Faite le jet de dé de votre adversaire et entrez le résultat :"
+
+                                        boss_atk = INPUT_USER_BOSS
+
+                                        SI user_atk >= boss_atk {
+                                            AFFICHER "Vous battez le Spatiate et devenez le champion en titre, vous"
+                                            AFFICHER "optenez le titre de Grand Champion"
+                                        } SINON {
+                                            AFFICHER "Le Spartiate vous bat, vous etes éliminé du tournois et recevez le titre"
+                                            AFFICHER "de Champion de DIAMANT"
+                                        }
+                                    } SINON {
+                                        AFFICHER "Le Roi des Viking vous bat et vous etez éliminé du tournois, mais recevez le titre"
+                                        AFFICHER "de Champion de PLATINE"
+                                    }
+                                }SINON {
+                                    AFFICHER "Le GRIFFON vous a battu, et vous etes éliminé du tournois, vous"
+                                    AFFICHER "recevez le titre de "Champion d'OR"
+                                    AFFICHER "Vous ferez mieux la prochaine fois ;)"
+                                }
+                            }
+                        } SINON {
+                            AFFICHER "Le Sphinx vous bat et vous etes éliminé, mais vous recevez le titre"
+                            AFFICHER "de Champion d'ARGENT"
+                            AFFICHER "Vous ferez mieux la prochaine fois ;)"
+                        }
+                    } SINON {
+                        AFFICHER "La Sirene vous a battu, et vous etes éliminé du tournois, vous
+                        AFFICHER "recevez le titre de "Champion de BRONZE"
+                        AFFICHER "Vous ferez mieux la prochaine fois ;)"
+                    }
+                }
+
+            }SINON {
+                AFFICHER    "Le Squelette vous a battu, et vous etes éliminé du tournois, et"
+                AFFICHER    "recevez le titre de "Champion de FER"
+                AFFICHER    "Vous ferez mieux la prochaine fois ;)"
+            }
+
+        } SINON {
+            AFFICHER    "Le Centaure vous a battu, et vous etes éliminé du tournois, et"
+            AFFICHER    "recevez le titre de "Champion de BOIS"
+            AFFICHER    "Vous ferez mieux la prochaine fois ;)"
+            }
+    }
+} SINON {
+    AFFICHER    "Le Minautore vous a battu, et vous etes éliminé du tournois, et"
+    AFFICHER    "recevez le titre de "Champion de CARTON"
+    AFFICHER    "Vous ferez mieux la prochaine fois ;)"
+}
