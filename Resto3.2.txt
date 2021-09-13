@@ -1,0 +1,116 @@
+FONCTION check_credit (budget){
+    SI budget >= 20 {
+            AFFICHER "Carte:"
+            AFFICHER "1 - Boisson soft - 5€"
+            AFFICHER "2 - Boisson alcoolisée - 8€"
+            AFFICHER "3 - Plat du jour - 20€"
+            AFFICHER "4 - Je ne souhaite plus commander"
+            VARIABLE choix = LIRE_SAISIE_CLAVIER
+        
+        VARIABLE choix = LIRE_SAISIE_CLAVIER 
+    } SINON SI budget >= 8 {
+            AFFICHER "Carte:"
+            AFFICHER "1 - Boisson soft - 5€"
+            AFFICHER "2 - Boisson alcoolisée - 8€"
+            AFFICHER "4 - Je ne souhaite plus commander"
+            VARIABLE choix = LIRE_SAISIE_CLAVIER
+       
+    } SINON SI budget >= 5 {
+            AFFICHER "Carte:"
+            AFFICHER "1 - Boisson soft - 5€"
+            AFFICHER "4 - Je ne souhaite plus commander"
+            VARIABLE choix = LIRE_SAISIE_CLAVIER        
+    }
+}
+**********************V-Opti***************************
+FONCTION check_credit (budget){
+    AFFICHER "Carte:"
+    SI budget >= 5 {            
+        AFFICHER "1 - Boisson soft - 5€"
+        SI budget >= 8 {
+            AFFICHER "2 - Boisson alcoolisée - 8€"
+            SI budget >= 20 {
+                AFFICHER "3 - Plat du jour - 20€"
+            }
+        }
+    }
+    AFFICHER "4 - Je ne souhaite plus commander"
+}
+****************************************************
+************************V-Opti V2*******************
+FONCTION check_credit (budget){
+    AFFICHER "Carte:"
+    SI budget >= 5 {            
+        AFFICHER "1 - Boisson soft - 5€"
+    }
+    SI budget >= 8 {
+        AFFICHER "2 - Boisson alcoolisée - 8€"
+    }
+    SI budget >= 20 {
+        AFFICHER "3 - Plat du jour - 20€"
+    }
+    AFFICHER "4 - Je ne souhaite plus commander"
+}
+
+****************************************************
+
+
+AFFICHER "Bienvenue sur l'interface Resto'Commande"
+
+AFFICHER "Quel est votre age?"
+VARIABLE age = LIRE_SAISIE_CLAVIER
+
+AFFICHER "Définissez votre budget."
+VARIABLE budget = LIRE_SAISIE_CLAVIER
+
+
+VARIABLE continuer = "oui"
+
+TANT QUE continuer == "oui" && budget >= 5 {
+
+   AFFICHER check_credit(budget)
+
+    SI choix == 1 {
+        SI budget >= 5 {
+            budget = budget - 5
+            AFFICHER "Commande acceptée"
+        }
+        SINON {
+            AFFICHER "Commande refusée, crédit insuffisant"
+        }
+    }
+    SINON SI choix == 2 {
+        SI age < 18 {
+            AFFICHER "Commande refusée, age minimum non atteint"
+        }
+        SINON SI budget < 8 {
+            AFFICHER "Commande refusée, crédit insuffisant"
+        }
+        SINON {
+            budget = budget - 8
+            AFFICHER "Commande acceptée"
+        }
+    }
+    SINON SI choix == 3 {
+        SI budget >= 20 {
+            budget = budget - 20
+            AFFICHER "Commande acceptée"
+        }
+        SINON {
+            AFFICHER "Commande refusée, crédit insuffisant"
+        }
+    }
+    SINON SI choix == 4 {
+        continuer = "non"
+    }
+    SINON {
+        AFFICHER "Veuillez choisir parmi les options proposées"
+    }
+
+}
+
+SI budget < 5 {
+    AFFICHER "Votre bugdet est insuffisant pour continuer"
+}
+
+AFFICHER "Merci et à bientôt"

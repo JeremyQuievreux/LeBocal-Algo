@@ -18,6 +18,8 @@ VARIABLE credit = LIRE_SAISIE_CLAVIER
 
 VARIABLE check = verifierCredit(credit)
 
+VARIABLE commander
+
 VARIABLE continuer = "oui"
 
 TANT QUE continuer == "oui"{
@@ -44,7 +46,7 @@ TANT QUE continuer == "oui"{
 
             choix = LIRE_SAISIE_CLAVIER    
         }        
-    } SINON SI check = "medium"{
+    } SINON SI check == "medium"{
         TANT QUE choix != 1 || choix != 2 || choix !=4 {
 
             AFFICHER "Que voulez vous ?"
@@ -55,7 +57,7 @@ TANT QUE continuer == "oui"{
 
             choix = LIRE_SAISIE_CLAVIER    
         }        
-    } SINON {
+    } SINON SI check == "mini"{
         TANT QUE choix != 1 || choix != 4{
 
         AFFICHER "Que voulez vous ?"
@@ -65,6 +67,9 @@ TANT QUE continuer == "oui"{
 
         choix = LIRE_SAISIE_CLAVIER   
         }        
+    }SINON {
+        continuer = "non"
+        commander = "2"
     }
 
     SI choix == 1 {
@@ -96,7 +101,7 @@ TANT QUE continuer == "oui"{
         }
     } **** quitter si == 4
 
-    VARIABLE commander
+    
 
     TANT QUE commander != 1 || commander != 2 {
         AFFICHER "Voulez vous encore commander ?"
