@@ -1,4 +1,4 @@
-let age = window.prompt("Quelle est votre age ?");
+let age = window.prompt("Bienvenue sur l'interface Resto'Commande \nQuelle est votre age ?");
 
 let credit = window.prompt("De combien voulez vous créditer votre compte ?")
 

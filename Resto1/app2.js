@@ -10,7 +10,7 @@ console.log("3 - Plat : 20€");
 let choix = window.prompt("Faite votre choix :")
 
 switch (choix) {
-    case 1:
+    case "1":
         if (credit >= 5) {
             credit = credit - 5
             console.clear()
@@ -21,7 +21,7 @@ switch (choix) {
             console.log(" Commande refusée, crédit insuffisant");
         }        
         break;
-    case 2:
+    case "2":
         if (age < 18) {
             console.clear()
             console.log("Commande refusée, vous n'avez pas l'age légal");
@@ -35,7 +35,7 @@ switch (choix) {
             console.log("Bon appetit");
         }
         break;
-    case 3:
+    case "3":
         if (credit >= 20) {
             credit = credit - 20
             console.clear()
@@ -46,11 +46,9 @@ switch (choix) {
             console.log("Commande refusée, vous n'avez pas asser de crédit")
         }
         break;
-    case !3 || !2 || !1 :
+    default:
         console.clear();
         console.log("Nous n'avons compris votre demande"); 
-        break;
-    default:
         break;
 }
 
