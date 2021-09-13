@@ -36,7 +36,7 @@ if (choix == 2) {
     }
 }
 
-if (choix ==3) {
+if (choix == 3) {
     if (credit >= 20) {
         credit = credit - 20
         console.clear()
@@ -48,9 +48,9 @@ if (choix ==3) {
     }    
 }
 
-if (choix != 1 || choix != 2 || choix != 3) {
+if (choix != 1 && choix != 2 && choix != 3) {
     console.clear();
-    console.log("Nous n'avons compris votre demande");    
+    console.log("Nous n'avons compris pas votre demande");    
 }
 
 console.log("Vous avez " + credit + " € sur votre compte.");
