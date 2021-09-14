@@ -1,29 +1,42 @@
+
+let fullMenu
+
+function afficherMenu (budget){
+    let menu_ligne_1 = `Que voulez vous commander ? \n`;
+    let menu_ligne_2 = `Credit dispo : ${budget} € \n`;
+    let menu_ligne_3 = "1 - Boisson Soft : 5€ \n";
+    let menu_ligne_4 = "2 - Boisson alcoolisée : 8 € \n";
+    let menu_ligne_5 = "3 - Plat du jour : 20€ € \n";
+    let menu_ligne_6 = "0 - Rien et Quitter \n";
+    if (budget >= 5) {
+        fullMenu = menu_ligne_1 + menu_ligne_2 + menu_ligne_3
+    }
+    if (budget >= 8) {
+        fullMenu += menu_ligne_4
+    }
+    if (budget >= 20) {
+        fullMenu += menu_ligne_5
+    }
+    fullMenu += menu_ligne_6
+    return fullMenu;
+}
+
 let age = window.prompt("Bienvenue sur l'interface Resto'Commande \nQuelle est votre age ?");
 
-let budget = window.prompt("De combien voulez vous créditer votre compte ?")
+let budget = window.prompt("De combien voulez vous créditer votre compte ?");
 
-let choix;
+let choix 
 
 while (choix != 0 && budget >= 5) {
+        
+    choix = parseInt(window.prompt(afficherMenu(budget)));
 
-    choix = parseInt(window.prompt(`Que voulez vous commander ?
-    Credit dispo : ${budget} €
-    1 - Boisson non-alcoolisée : 5€
-    2 - Boisson Alcoolisée : 8€
-    3 - Plat du jour : 20€
-    0 - Rien et quitter`));
-    
     if (choix != 1 && choix != 2 && choix != 3 && choix != 0) {
         while (choix != 1 && choix != 2 && choix != 3 && choix != 0) {
-            choix = parseInt(window.prompt(`Nous n'avons pas compris votre demande !
-            Credit dispo : ${budget} €
-            1 - Boisson non-alcoolisée : 5€
-            2 - Boisson Alcoolisée : 8€
-            3 - Plat du jour : 20€
-            0 - Rien et quitter`));
+            choix = parseInt(window.prompt("Nous n'avons pas compris votre demande \n" + afficherMenu(budget)));            
         }     
     }
-      
+
     if (choix == 1) {
         if (budget >= 5) {
             budget = budget - 5

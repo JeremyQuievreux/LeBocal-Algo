@@ -1,4 +1,5 @@
 
+let line_0 = "Nous n'avons pas compris votre demande ! \n";
 let line_1 = "Que voulez vous commander ? \n";
 let line_2 = "";
 let line_3 = "";
@@ -28,7 +29,13 @@ let choix
 while (choix != 0 && budget >= 5) {
     afficherMenu(budget);
     
-    choix = window.prompt(line_1 + line_2 + line_3 + line_4 + line_5 + line_6);
+    choix = parseInt(window.prompt(line_1 + line_2 + line_3 + line_4 + line_5 + line_6));
+
+    if (choix != 1 && choix != 2 && choix != 3 && choix != 0) {
+        while (choix != 1 && choix != 2 && choix != 3 && choix != 0) {
+            choix = parseInt(window.prompt(line_0 + line_1 + line_2 + line_3 + line_4 + line_5 + line_6));
+        }     
+    }
 
     if (choix == 1) {
         if (budget >= 5) {

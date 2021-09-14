@@ -2,28 +2,25 @@ let age = window.prompt("Bienvenue sur l'interface Resto'Commande \nQuelle est v
 
 let budget = window.prompt("De combien voulez vous créditer votre compte ?")
 
-let choix;
+let choix ;
 
-while (choix != 0 && budget >= 5) {
-
+do {
     choix = parseInt(window.prompt(`Que voulez vous commander ?
     Credit dispo : ${budget} €
     1 - Boisson non-alcoolisée : 5€
     2 - Boisson Alcoolisée : 8€
     3 - Plat du jour : 20€
     0 - Rien et quitter`));
-    
-    if (choix != 1 && choix != 2 && choix != 3 && choix != 0) {
-        while (choix != 1 && choix != 2 && choix != 3 && choix != 0) {
-            choix = parseInt(window.prompt(`Nous n'avons pas compris votre demande !
+
+    while (choix != 1 && choix != 2 && choix != 3 && choix != 0) {
+                choix = parseInt(window.prompt(`Nous n'avons pas compris votre demande !
             Credit dispo : ${budget} €
             1 - Boisson non-alcoolisée : 5€
             2 - Boisson Alcoolisée : 8€
             3 - Plat du jour : 20€
             0 - Rien et quitter`));
-        }     
-    }
-      
+            } 
+
     if (choix == 1) {
         if (budget >= 5) {
             budget = budget - 5
@@ -50,7 +47,10 @@ while (choix != 0 && budget >= 5) {
             alert(`Commande refusée ! \nVous n'avez pas asser de crédit !`);
         }    
     }
-}
+         
+    
+} while (choix != 0 && budget >= 5);
+
 if (budget < 5) {
     alert(`Votre budget est insuffisant pour continuer !\nIl vous reste ${budget} €`);
 }

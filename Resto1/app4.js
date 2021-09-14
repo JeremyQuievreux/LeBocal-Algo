@@ -1,10 +1,9 @@
 ///SWITCH + alert ////
 let age = window.prompt("Bienvenue sur l'interface Resto'Commande \nQuelle est votre age ?");
 
-let credit = window.prompt("De combien voulez vous créditer votre compte ?")
+let credit = window.prompt("De combien voulez vous créditer votre compte ?");
 
-let choix = window.prompt("Carte : \n1 - Boisson non-alcoolisée : 5€ \n2 - Boisson alcoolisée : 8€ \n3 - Plat : 20€ \nQue voulez vous ?")
-
+let choix = window.prompt("Carte : \n1 - Boisson non-alcoolisée : 5€ \n2 - Boisson alcoolisée : 8€ \n3 - Plat : 20€ \nQue voulez vous ?");
 
 switch (choix) {
     case "1":
