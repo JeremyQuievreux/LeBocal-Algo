@@ -2,7 +2,7 @@
 //fonction pour completer le menu par concatenation et return
 function afficherMenu (budget, erreur_saisie){
     //menu vide
-    let fullMenu =""
+    let fullMenu ="";
     //les differents briques
     let menu_ligne_0 = "Nous n'avous pas compris votre demande ! \n";
     let menu_ligne_1 = `Que voulez vous commander ? \n`;
@@ -13,18 +13,18 @@ function afficherMenu (budget, erreur_saisie){
     let menu_ligne_6 = "0 - Rien et Quitter \n";
 
     if (erreur_saisie) {
-        fullMenu += menu_ligne_0
+        fullMenu += menu_ligne_0;
     }
     if (budget >= 5) {
         fullMenu += menu_ligne_1 + menu_ligne_2 + menu_ligne_3;
     }
     if (budget >= 8) {
-        fullMenu += menu_ligne_4
+        fullMenu += menu_ligne_4;
     }
     if (budget >= 20) {
-        fullMenu += menu_ligne_5
+        fullMenu += menu_ligne_5;
     }
-    fullMenu += menu_ligne_6
+    fullMenu += menu_ligne_6;
     return fullMenu;
 }
 //Prompt pour savoir l'age
@@ -38,13 +38,13 @@ while (choix != 0 && budget >= 5) {
     choix = parseInt(window.prompt(afficherMenu(budget)));
     
     while (choix != 1 && choix != 2 && choix != 3 && choix != 0) {
-        let erreur_saisie = true
+        let erreur_saisie = true;
         choix = parseInt(window.prompt(afficherMenu(budget, erreur_saisie)));            
     }  
         
     if (choix == 1) {
         if (budget >= 5) {
-            budget = budget - 5
+            budget = budget - 5;
             alert(`Commande acceptée ! \n - 5 € de votre compte \nIl vous reste ${budget} €`);
         } else {
             alert(" Commande refusée ! Crédit insuffisant");
@@ -62,7 +62,7 @@ while (choix != 0 && budget >= 5) {
     }
     if (choix == 3) {
         if (budget >= 20) {
-            budget = budget - 20
+            budget = budget - 20;
             alert(`Commande acceptée ! \n - 20 € de votre compte \nIl vous reste ${budget} €`);
         } else {
             alert(`Commande refusée ! \nVous n'avez pas asser de crédit !`);
