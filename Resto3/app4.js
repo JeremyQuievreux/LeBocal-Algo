@@ -1,8 +1,8 @@
 
-//menu vide
-let fullMenu
 //fonction pour completer le menu par concatenation et return
 function afficherMenu (budget, erreur_saisie){
+    //menu vide
+    let fullMenu =""
     //les differents briques
     let menu_ligne_0 = "Nous n'avous pas compris votre demande ! \n";
     let menu_ligne_1 = `Que voulez vous commander ? \n`;
@@ -16,7 +16,7 @@ function afficherMenu (budget, erreur_saisie){
         fullMenu += menu_ligne_0
     }
     if (budget >= 5) {
-        fullMenu += menu_ligne_1 + menu_ligne_2 + menu_ligne_3
+        fullMenu += menu_ligne_1 + menu_ligne_2 + menu_ligne_3;
     }
     if (budget >= 8) {
         fullMenu += menu_ligne_4
@@ -35,12 +35,10 @@ let budget = window.prompt("De combien voulez vous créditer votre compte ?");
 let choix 
 
 while (choix != 0 && budget >= 5) {
-    fullMenu =""; //si j'enleve ca marche plus ;)
     choix = parseInt(window.prompt(afficherMenu(budget)));
     
     while (choix != 1 && choix != 2 && choix != 3 && choix != 0) {
         let erreur_saisie = true
-        fullMenu = "";
         choix = parseInt(window.prompt(afficherMenu(budget, erreur_saisie)));            
     }  
         
