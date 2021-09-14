@@ -1,34 +1,17 @@
-function afficherMenu (budget){
-    if (budget >= 20) {
-        return (`Que voulez vous commander ?
-        Credit dispo : ${budget} €
-        1 - Boisson non-alcoolisée : 5€
-        2 - Boisson Alcoolisée : 8€
-        3 - Plat du Jour : 20€
-        0 - Rien et quitter`)
-    } else if (budget >= 8){
-        return `Que voulez vous commander ?
-        Credit dispo : ${budget} €
-        1 - Boisson non-alcoolisée : 5€
-        2 - Boisson Alcoolisée : 8€
-        0 - Rien et quitter`
-    } else {
-        return `Que voulez vous commander ?
-        Credit dispo : ${budget} €
-        1 - Boisson non-alcoolisée : 5€
-        0 - Rien et quitter`
-    }
-}
-
 let age = window.prompt("Bienvenue sur l'interface Resto'Commande \nQuelle est votre age ?");
 
-let budget = window.prompt("De combien voulez vous créditer votre compte ?");
+let budget = window.prompt("De combien voulez vous créditer votre compte ?")
 
-let choix 
+let choix = 0;
 
-while (choix != 0 && budget >= 5) {
+while (choix != 4 && budget >= 5) {
 
-    choix = window.prompt(afficherMenu(budget));
+    choix = window.prompt(`Que voulez vous commander ?
+    Credit dispo : ${budget} €
+    1 - Boisson non-alcoolisée : 5€
+    2 - Boisson Alcoolisée : 8€
+    3 - Plat du jour : 20€
+    4 - Rien et quitter`);
 
     if (choix == 1) {
         if (budget >= 5) {

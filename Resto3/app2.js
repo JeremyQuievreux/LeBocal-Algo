@@ -1,22 +1,12 @@
 function afficherMenu (budget){
+    if (budget >= 5) {
+        return '1 - Boisson Soft : 5€'
+    }
+    if (budget >= 8) {
+        return '2 - Boisson Alcoolisée : 8€'
+    }
     if (budget >= 20) {
-        return (`Que voulez vous commander ?
-        Credit dispo : ${budget} €
-        1 - Boisson non-alcoolisée : 5€
-        2 - Boisson Alcoolisée : 8€
-        3 - Plat du Jour : 20€
-        0 - Rien et quitter`)
-    } else if (budget >= 8){
-        return `Que voulez vous commander ?
-        Credit dispo : ${budget} €
-        1 - Boisson non-alcoolisée : 5€
-        2 - Boisson Alcoolisée : 8€
-        0 - Rien et quitter`
-    } else {
-        return `Que voulez vous commander ?
-        Credit dispo : ${budget} €
-        1 - Boisson non-alcoolisée : 5€
-        0 - Rien et quitter`
+        return '3 - Plat du Jour : 20€'
     }
 }
 
