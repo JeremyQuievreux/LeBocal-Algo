@@ -1,12 +1,21 @@
+
+let line_1 = "Que voulez vous commander ? \n";
+let line_2 = "";
+let line_3 = "";
+let line_4 = "";
+let line_5 = "";
+let line_6 = "0 - Rien et Quitter";
+
 function afficherMenu (budget){
+    line_2 = `Credit dispo : ${budget} €\n`;
     if (budget >= 5) {
-        return '1 - Boisson Soft : 5€'
+        line_3 = '1 - Boisson Soft : 5€ \n';
     }
     if (budget >= 8) {
-        return '2 - Boisson Alcoolisée : 8€'
+        line_4 = '2 - Boisson Alcoolisée : 8€ \n';
     }
     if (budget >= 20) {
-        return '3 - Plat du Jour : 20€'
+        line_5 = '3 - Plat du Jour : 20€ \n';
     }
 }
 
@@ -17,8 +26,9 @@ let budget = window.prompt("De combien voulez vous créditer votre compte ?");
 let choix 
 
 while (choix != 0 && budget >= 5) {
-
-    choix = window.prompt(afficherMenu(budget));
+    afficherMenu(budget);
+    
+    choix = window.prompt(line_1 + line_2 + line_3 + line_4 + line_5 + line_6);
 
     if (choix == 1) {
         if (budget >= 5) {
