@@ -1,5 +1,52 @@
 body {
   background-color: lightgray;
 }
+body .container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .container .input-line {
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+body .container .input-line label {
+  margin: 20px;
+}
+body .container .input-line input {
+  margin: 20px;
+}
+body .container .input-line button {
+  margin: 20px;
+}
+body .container .todos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .container .todos .todo-item {
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 50%;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+body .container .todos .todo-item p {
+  font-size: 20px;
+  font-weight: bold;
+}
+body .container .todos .todo-item input {
+  margin-right: 50px;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,86 @@
+//Assignation des variables
+let btnElt = document.querySelector(".add-task");
+let inputElt = document.getElementById("task");
+let divElt = document.querySelector(".todos");
+//fonction ajouter les taches
+function addTask() {    
+//creation des elements
+    //la div
+    let divTodos = document.createElement("div");
+    //le paragraphe
+    let pElt = document.createElement("p");
+    //le bouton X
+    let closeBtn = document.createElement("button")
+    //la checkbox 
+    let checkBoxElt = document.createElement("input");
+    //Ajout de la Class a la checkbox
+    checkBoxElt.classList.add("check-todo");
+    //Changement de type
+    checkBoxElt.setAttribute("type", "checkbox")
+    //Event au check (toggle de style)
+    checkBoxElt.addEventListener('change', function(){
+        //Selection de l'element suivant
+        let task = checkBoxElt.nextSibling
+        //Selection de l'element parent
+        let parentDiv = checkBoxElt.parentElement;
+        //Condition sur le style
+        if (task.style.textDecoration != "line-through") {
+            task.style.textDecoration = "line-through";
+            parentDiv.style.backgroundColor = "lightseagreen";
+        } else {
+            task.style.textDecoration = "none";
+            parentDiv.style.backgroundColor = "white";
+        }
+    })
+    //Modification du bouton X
+        //Ajout de la class
+    closeBtn.classList.add("close-btn");
+        //Et la valeur
+    closeBtn.innerText = "X";  
+    //Event suppression tache sur le bouton X
+    closeBtn.addEventListener('click', function(){
+        //suppression de la div
+        divTodos.remove();
+    })  
+    //Contenu texte du paragraphe récupéré de l'input
+    pElt.innerText = inputElt.value;
+    //Event sur le paragraphe
+    pElt.addEventListener('click', function(){
+        let newDiv = document.createElement('div');
+        let newInput = document.createElement('input');
+        let newVBtn = document.createElement('button');
+        let divParent = pElt.parentNode;
+        newVBtn.innerText = "Modifier";
+        newInput.value = pElt.innerText;
+        newDiv.appendChild(newInput);
+        newDiv.appendChild(newVBtn);
+        divParent.replaceChild(newDiv, pElt);
+        newVBtn.addEventListener('click', function(){
+            pElt.innerText = newInput.value;
+            divParent.replaceChild(pElt, newDiv);
+        })
+    })
+    //ajout class a la div
+    divTodos.classList.add("todo-item"); 
+    //injection de la Checkbox dans la div
+    divTodos.appendChild(checkBoxElt);  
+    //Injection du paragraphe dans la div
+    divTodos.appendChild(pElt);
+    //injection du btn X dans la div
+    divTodos.appendChild(closeBtn);
+    //injection de la div dans la grosse div
+    divElt.appendChild(divTodos);
+    //Reset du contenu de l'input
+    inputElt.value = "";       
+}
+
+
+//Event sur le bouton ajouter
+btnElt.addEventListener('click', addTask);
+
+
+
+
+
+
+ 
