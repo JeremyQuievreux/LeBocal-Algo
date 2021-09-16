@@ -2,6 +2,7 @@
 let btnElt = document.querySelector(".add-task");
 let inputElt = document.getElementById("task");
 let divElt = document.querySelector(".todos");
+let cateElt = document.querySelector(".categories")
 //fonction ajouter les taches
 function addTask() {    
 //creation des elements
@@ -21,15 +22,11 @@ function addTask() {
     checkBoxElt.addEventListener('change', function(){
         //Selection de l'element suivant
         let task = checkBoxElt.nextSibling
-        //Selection de l'element parent
-        let parentDiv = checkBoxElt.parentElement;
         //Condition sur le style
         if (task.style.textDecoration != "line-through") {
             task.style.textDecoration = "line-through";
-            parentDiv.style.backgroundColor = "lightseagreen";
         } else {
             task.style.textDecoration = "none";
-            parentDiv.style.backgroundColor = "white";
         }
     })
     //Modification du bouton X
@@ -40,7 +37,10 @@ function addTask() {
     //Event suppression tache sur le bouton X
     closeBtn.addEventListener('click', function(){
         //suppression de la div
-        divTodos.remove();
+        divTodos.classList.add("fade");
+        setTimeout(function(){
+            divTodos.remove();
+            }, 800);
     })  
     //Contenu texte du paragraphe récupéré de l'input
     pElt.innerText = inputElt.value;
@@ -62,6 +62,15 @@ function addTask() {
     })
     //ajout class a la div
     divTodos.classList.add("todo-item"); 
+    divTodos.classList.add("active");
+    if (cateElt.value == "administratif") {
+        divTodos.style.backgroundColor = "lightyellow";
+    } else if (cateElt.value == "Loisir") {
+        divTodos.style.backgroundColor = "lightblue";
+    }else {
+        divTodos.style.backgroundColor = "lightpink";
+    }
+
     //injection de la Checkbox dans la div
     divTodos.appendChild(checkBoxElt);  
     //Injection du paragraphe dans la div

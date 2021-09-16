@@ -1,3 +1,32 @@
+@keyframes apparition{
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes disparition{
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(150%);
+        opacity: 1;
+    }
+}
+
+.active{
+    animation: apparition 1000ms;
+}
+
+.fade{
+    animation: disparition 1000ms;
+}
+
 body{
     background-color: lightgray;
     .container{
@@ -37,6 +66,7 @@ body{
                 margin: 10px;
                 border-radius: 10px;
                 border: 2px solid black;
+                
                 p{
                     font-size: 20px;
                     font-weight: bold;
