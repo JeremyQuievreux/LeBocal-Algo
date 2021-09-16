@@ -1,0 +1,15 @@
+.start-line {
+  padding-bottom: 20px;
+}
+
+.maze .line-a div, .maze .line-b div, .maze .line-c div, .maze .line-d div, .maze .line-e div,
+.maze .line-f div, .maze .line-g div, .maze .line-h div, .maze .line-i div, .maze .line-j div {
+  height: 50px;
+  width: 50px;
+}
+
+.out {
+  background-color: black;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,51 @@
+/*Flexstrap*/
+/*By Jeremy*/
+/*Flex-Container Properties*/
+    /*display*/
+.d-flex{
+    display: flex;
+}
+/*flex-direction*/
+.fd-row{flex-direction: row;}
+.fd-row-r{flex-direction: row-reverse;}
+.fd-col{flex-direction: column;}
+.fd-col-r{flex-direction: column-reverse;}
+/*flex-wrap*/
+.fw-no{flex-wrap: nowrap;}
+.fw-w{flex-wrap: wrap;}
+.fw-w-r{flex-wrap: wrap-reverse;}
+/*Justify Content*/
+.jc-start{justify-content: flex-start;}
+.jc-end{justify-content: flex-end;}
+.jc-center{justify-content: center;}
+.jc-between{justify-content: space-between;}
+.jc-around{justify-content: space-around;}
+.jc-event{justify-content: space-evenly;}
+/*Align-Items*/
+.ai-start{align-items: flex-start;}
+.ai-end{align-items: flex-end;}
+.ai-center{align-items: center;}
+.ai-stretch{align-items: stretch;}
+.ai-base{align-items: baseline;}
+/*Align-Content*/
+.ac-start{align-content: flex-end;}
+.ac-end{align-content: flex-end;}
+.ac-center{align-content: center;}
+.ac-stretch{align-content: stretch;}
+.ac-between{align-content: space-between;}
+.ac-around{align-content: space-around;}
+/*Flex-Items Properties*/
+/*Order*/
+.order-1{order: 1;}
+.order-2{order: 2;}
+.order-3{order: 3;}
+.order-4{order: 4;}
+.order-5{order: 5;}
+/*Align-Self*/
+.as-auto{align-self: auto;}
+.as-start{align-self: flex-start;}
+.as-end{align-self: flex-end;}
+.as-center{align-self: center;}
+.as-base{align-self: baseline;}
+.as-stretch{align-self: stretch;}
+

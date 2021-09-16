@@ -1,0 +1,16 @@
+.start-line{
+    padding-bottom: 20px;
+}
+.maze{
+    .line-a, .line-b, .line-c, .line-d, .line-e,
+    .line-f, .line-g, .line-h, .line-i, .line-j{
+        div{
+            height: 50px;
+            width: 50px;
+        }
+    }
+}
+
+.out{
+    background-color: black;
+}

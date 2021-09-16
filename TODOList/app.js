@@ -49,15 +49,39 @@ function addTask() {
         let newDiv = document.createElement('div');
         let newInput = document.createElement('input');
         let newVBtn = document.createElement('button');
+        let newSelect = document.createElement("select");
+        let newOption1 = document.createElement("option");
+        let newOption2 = document.createElement("option");
+        let newOption3 = document.createElement("option");
         let divParent = pElt.parentNode;
+
+        newOption1.setAttribute("value", "Loisir");
+        newOption1.innerText = "Loisir";
+        newOption2.setAttribute("value", "Ménage");
+        newOption2.innerText = "Ménage";
+        newOption3.setAttribute("value", "Administratif");
+        newOption3.innerText = "Administratif";
+
+        newSelect.appendChild(newOption1);
+        newSelect.appendChild(newOption2);
+        newSelect.appendChild(newOption3);
+
         newVBtn.innerText = "Modifier";
         newInput.value = pElt.innerText;
         newDiv.appendChild(newInput);
+        newDiv.appendChild(newSelect);
         newDiv.appendChild(newVBtn);
         divParent.replaceChild(newDiv, pElt);
         newVBtn.addEventListener('click', function(){
             pElt.innerText = newInput.value;
             divParent.replaceChild(pElt, newDiv);
+            if (newSelect.value == "Loisir") {
+                divParent.style.backgroundColor = "lightblue"
+            } else if (newSelect.value == "Ménage"){
+                divParent.style.backgroundColor = "lightpink";
+            } else{
+                divParent.style.backgroundColor = "lightyellow";
+            }
         })
     })
     //ajout class a la div
