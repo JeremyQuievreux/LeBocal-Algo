@@ -36,7 +36,7 @@ function addTask() {
     closeBtn.innerText = "X";  
     //Event suppression tache sur le bouton X
     closeBtn.addEventListener('click', function(){
-        //suppression de la div
+        //suppression de la div avec un delay
         divTodos.classList.add("fade");
         setTimeout(function(){
             divTodos.remove();
@@ -55,23 +55,28 @@ function addTask() {
         let newOption3 = document.createElement("option");
         let divParent = pElt.parentNode;
 
+        //Création du contenu des options du select
         newOption1.setAttribute("value", "Loisir");
         newOption1.innerText = "Loisir";
         newOption2.setAttribute("value", "Ménage");
         newOption2.innerText = "Ménage";
         newOption3.setAttribute("value", "Administratif");
         newOption3.innerText = "Administratif";
-
+        //Insersion des options dans le select
         newSelect.appendChild(newOption1);
         newSelect.appendChild(newOption2);
         newSelect.appendChild(newOption3);
-
+        //Contenu du button modifier
         newVBtn.innerText = "Modifier";
+        //Recuperation du le tache et insersion dans le input
         newInput.value = pElt.innerText;
+        //Insertion du input/select/button dans la div
         newDiv.appendChild(newInput);
         newDiv.appendChild(newSelect);
         newDiv.appendChild(newVBtn);
+        //Remplacement du p par la div de modif
         divParent.replaceChild(newDiv, pElt);
+        //Event sur le button modifier
         newVBtn.addEventListener('click', function(){
             pElt.innerText = newInput.value;
             divParent.replaceChild(pElt, newDiv);
