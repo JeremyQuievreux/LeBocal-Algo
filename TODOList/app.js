@@ -17,7 +17,7 @@ function addTask() {
     //Ajout de la Class a la checkbox
     checkBoxElt.classList.add("check-todo");
     //Changement de type
-    checkBoxElt.setAttribute("type", "checkbox")
+    checkBoxElt.setAttribute("type", "checkbox");
     //Event au check (toggle de style)
     checkBoxElt.addEventListener('change', function(){
         //Selection de l'element suivant
