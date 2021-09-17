@@ -114,6 +114,25 @@ validerBtn.addEventListener('click', function(){
 
 
 
-findInputElt.addEventListener("keyup", () => {
-    console.log(findInputElt.value);
-  });
+findInputElt.addEventListener("input", () => {
+    let filteredContacts = "";
+    function verifierCorrespondance(contact) {
+        let regex = new RegExp(`${findInputElt.value}`);
+        let result = regex.test(contact.name);
+        if (result) {
+            return contact;
+        }
+    }    
+    filteredContacts = contacts.filter(verifierCorrespondance);
+    console.log(filteredContacts);
+
+    //reset la main div
+    //faire de des sous avec l'array de sortie
+});
+
+findInputElt.addEventListener('blur', () => {
+    console.log("blur");
+    findInputElt.value = "";
+    //reset la main div
+    //refaire des sous div avec les contacts du localstorage
+})
