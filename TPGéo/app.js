@@ -1,3 +1,4 @@
+///V1 sans fonction externe //
 //Création des variables
 let whereNowBtn = document.querySelector(".where-now");
 let wherePastBtn = document.querySelector(".where-past");
