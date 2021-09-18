@@ -25,7 +25,7 @@ function createContactDiv(contact) {
     //Setup de la div
     newdivElt.classList.add("item");
     //Setup du p
-    newPElt.innerText = `Je suis ${contact.name} ${contact.lastname} mon numéro est le ${contact.phone}, et voila mon adresse mail ${contact.mail}`;
+    newPElt.innerText = contact.presentation();
     //Injection des elements dans la nouvelle div
     newdivElt.appendChild(newPElt);
     newdivElt.appendChild(newCloseBtn);
@@ -82,6 +82,9 @@ validerBtn.addEventListener('click', function(){
     //creation d'un objet
     let newEntry = {
         "id" : listLength,
+        presentation : function presentation2() {
+            return (`Je suis ${nameInputElt.value} ${lastnameInputElt.value} mon numéro est le ${telInputElt.value}, et voila mon adresse mail ${mailInputElt.value}`)
+        },
         "name" : nameInputElt.value,
         "lastname" : lastnameInputElt.value,
         "mail" : mailInputElt.value,
@@ -117,7 +120,6 @@ findInputElt.addEventListener("input", () => {
 });
 //Event au blur de l'input de recherche
 findInputElt.addEventListener('blur', () => {
-    contactsElt.innerHTML="";
     findInputElt.value = "";
     contacts.forEach((contact) => {
         createContactDiv(contact);
