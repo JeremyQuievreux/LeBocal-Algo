@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    .form{
+    .form, .find-bar{
         width: 400px;
         display: flex;
         flex-direction: column;
@@ -17,6 +17,11 @@
         color: white;
         font-weight: bold;
         background-color: teal;
+    }
+    .find-bar{
+        flex-direction: row;
+        justify-content: space-around;
+        padding-top: 20px;
     }
     .form-name, .form-lastname, .form-mail, .form-phone, .form-cat, .form-special{
         display: flex;

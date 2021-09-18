@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
 }
-.container .form {
+.container .form, .container .find-bar {
   width: 400px;
   display: flex;
   flex-direction: column;
@@ -16,6 +16,11 @@
   color: white;
   font-weight: bold;
   background-color: teal;
+}
+.container .find-bar {
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 20px;
 }
 .container .form-name, .container .form-lastname, .container .form-mail, .container .form-phone, .container .form-cat, .container .form-special {
   display: flex;
