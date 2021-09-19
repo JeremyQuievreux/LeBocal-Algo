@@ -15,6 +15,16 @@ function Perso (name, lastname, mail, phone, option){
     this.adressePostal = option;
 }
 
+
+if (inputCat == "perso") {
+    let newEntry = new Perso(inputName, InputLastname, inputMail, inputPhone, inputOption);
+} else {
+    let newEntry = new Pro(inputName, InputLastname, inputMail, inputPhone, inputOption);
+}
+// oush dans le array
+
+
+
 let contact = new Contact("quievreux", "Jeremy", "mon mail", "0600000000");
 
 console.log(contact);
@@ -26,10 +36,3 @@ console.log(contactPro);
 let contactPerso = new Perso("quievreux", "Jeremy", "mon mail", "0600000000", "adresse postal");
 
 console.log(contactPerso);
-
-if (inputCat == "perso") {
-    let newEntry = new Perso(inputName, InputLastname, inputMail, inputPhone, inputOption);
-} else {
-    let newEntry = new Pro(inputName, InputLastname, inputMail, inputPhone, inputOption);
-}
-// oush dans le array
