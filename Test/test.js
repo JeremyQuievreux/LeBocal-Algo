@@ -1,17 +1,18 @@
-function Contact(name, lastname, mail, phone) {
+function Contact(id, name, lastname, mail, phone) {
+    this.id = id;
     this.name = name;
     this.lastname = lastname;
     this.mail = mail;
     this.phone = phone;
 };
     
-function Pro (name, lastname, mail, phone, option) {
-    Contact.call(this, name, lastname, mail, phone);
+function Pro (id, name, lastname, mail, phone, option) {
+    Contact.call(this, id, name, lastname, mail, phone);
     this.entreprise = option;
 };
 
-function Perso (name, lastname, mail, phone, option){
-    Contact.call(this, name, lastname, mail, phone);
+function Perso (id, name, lastname, mail, phone, option){
+    Contact.call(this, id, name, lastname, mail, phone);
     this.adressePostal = option;
 }
 

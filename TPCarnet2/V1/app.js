@@ -5,9 +5,12 @@ let contacts = [];
 let nameInputElt = document.getElementById("name");
 let lastnameInputElt = document.getElementById("lastname");
 let mailInputElt = document.getElementById("mail");
-let telInputElt = document.getElementById("phone");
+let phoneInputElt = document.getElementById("phone");
 let validerBtn = document.querySelector(".validerBtn");
 let findInputElt = document.getElementById("find-bar");
+let catInputElt = document.getElementById("categorie");
+let optionLabElt = document.getElementById("option-label");
+let optionInputElt = document.getElementById("option-input");
 //Main Div
 let contactsElt = document.querySelector(".list-items");
 //Mise sous variable du localStorage("contacts")
@@ -63,6 +66,25 @@ function verifierCorrespondance(contact) {
         return contact;
     }
 }
+//****Constructor*/
+/*****Base*/
+function Contact(id, name, lastname, mail, phone) {
+    this.id = id;
+    this.name = name;
+    this.lastname = lastname;
+    this.mail = mail;
+    this.phone = phone;
+};
+//*****Pro surcouche Base*/
+function Pro(id, name, lastname, mail, phone, option) {
+    Contact.call(this, id, name, lastname, mail, phone);
+    this.entrepriseName = option;
+};
+//*****Perso surcouche Base*/
+function Perso(id, name, lastname, mail, phone, option){
+    Contact.call(this, id, name, lastname, mail, phone);
+    this.adressePostal = option;
+};
 //Check a l'ouverture de la page si il y a des données contacts
 //dans le LStorage
 if (loadLStorage) {
@@ -75,20 +97,26 @@ if (loadLStorage) {
         createContactDiv(contact);
     });
 };
+//Changement de label  dernier input celon la categorie choisie
+catInputElt.addEventListener("change", () => {
+    if (catInputElt.value == "perso") {
+        optionLabElt.innerText = "Adresse Postal : ";
+    } else {
+        optionLabElt.innerText = "Nom Entreprise : ";
+    }    
+})
 //Event au click sur le btn valider
 validerBtn.addEventListener('click', function(){
     //longueur de l'array
     let listLength = contacts.length;
     //creation d'un objet
-    let newEntry = {
-        "id" : listLength,
-        "name" : nameInputElt.value,
-        "lastname" : lastnameInputElt.value,
-        "mail" : mailInputElt.value,
-        "phone" : telInputElt.value
-    };
-    //push de l'objet dans l'array contacts
-    contacts.push(newEntry);    
+    if (catInputElt.value == "perso") {
+        let newEntry = new Perso(listLength, nameInputElt.value, lastnameInputElt.value, mailInputElt.value, phoneInputElt.value, optionInputElt.value);
+        contacts.push(newEntry);    
+    } else {
+        let newEntry = new Pro(listLength, nameInputElt.value, lastnameInputElt.value, mailInputElt.value, phoneInputElt.value, optionInputElt.value);
+        contacts.push(newEntry);    
+    }    
     //Sauvegarde dans le localStorage
     saveOnLocal()
     //Reset de la div principale
@@ -101,7 +129,8 @@ validerBtn.addEventListener('click', function(){
     nameInputElt.value = "";
     lastnameInputElt.value = "";
     mailInputElt.value = "";
-    telInputElt.value = "";
+    phoneInputElt.value = "";
+    optionInputElt.value = "";
 });
 //Event dans la barre de recherche
 findInputElt.addEventListener("input", () => {    
