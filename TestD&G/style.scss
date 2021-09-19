@@ -1,0 +1,33 @@
+body{
+    background-color: teal;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+
+.base {
+    background-color: turquoise;
+    height: 150px;
+    width: 150px;
+    position: relative;
+    top: 5px;
+    left: 5px;
+    cursor: pointer;
+}
+
+.tenu {
+    border: solid 5px #ccc;
+}
+
+.case{
+    border: solid 3px black;
+    height: 160px;
+    width: 160px;
+    background-color: white;
+}
+
+.hovered {
+    background-color: #f4f4f4;
+    border-style: dashed;
+}
