@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .form {
+  border: 1px solid black;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .form .form-name, .container .form .form-lastname, .container .form .form-mail, .container .form .form-phone {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.container .form .form-name input, .container .form .form-lastname input, .container .form .form-mail input, .container .form .form-phone input {
+  margin-right: 20px;
+}
+.container .form .form-name label, .container .form .form-lastname label, .container .form .form-mail label, .container .form .form-phone label {
+  margin-left: 20px;
+}
+.container .form .validerBtn {
+  margin-bottom: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */
