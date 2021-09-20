@@ -25,7 +25,7 @@ function createContactDiv(contact) {
     //Setup de la div
     newdivElt.classList.add("item");
     //Setup du p
-    newPElt.innerText = contact.presentation();
+    newPElt.innerText = contact.presentation;
     //Injection des elements dans la nouvelle div
     newdivElt.appendChild(newPElt);
     newdivElt.appendChild(newCloseBtn);
@@ -63,6 +63,18 @@ function verifierCorrespondance(contact) {
         return contact;
     }
 }
+
+function createEntry(id, name, lastname, mail, phone){
+    let presentation = `Je suis ${name} ${lastname} mon numéro est le ${phone}, et voila mon adresse mail ${mail}`;
+    return ({
+        "id" : id,
+        "name" : name,
+        "lastname" : lastname,
+        "mail" : mail,
+        "phone" : phone,
+        "presentation" : presentation
+    })
+}
 //Check a l'ouverture de la page si il y a des données contacts
 //dans le LStorage
 if (loadLStorage) {
@@ -75,21 +87,14 @@ if (loadLStorage) {
         createContactDiv(contact);
     });
 };
+
+
 //Event au click sur le btn valider
 validerBtn.addEventListener('click', function(){
     //longueur de l'array
     let listLength = contacts.length;
     //creation d'un objet
-    let newEntry = {
-        "id" : listLength,
-        presentation : function presentation2() {
-            return (`Je suis ${nameInputElt.value} ${lastnameInputElt.value} mon numéro est le ${telInputElt.value}, et voila mon adresse mail ${mailInputElt.value}`)
-        },
-        "name" : nameInputElt.value,
-        "lastname" : lastnameInputElt.value,
-        "mail" : mailInputElt.value,
-        "phone" : telInputElt.value
-    };
+    let newEntry = createEntry(listLength, nameInputElt.value, lastnameInputElt.value, mailInputElt.value, telInputElt.value);
     //push de l'objet dans l'array contacts
     contacts.push(newEntry);    
     //Sauvegarde dans le localStorage
@@ -125,7 +130,5 @@ findInputElt.addEventListener('blur', () => {
         createContactDiv(contact);
     });
 })
-
-
 let findLow = findInputElt.value.toLowerCase();
     console.log(findLow);
