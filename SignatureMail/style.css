@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,700;1,400&display=swap");
+body {
+  background-color: brown;
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.container .form {
+  border: 2px solid black;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .form .form-name, .container .form .form-lastname, .container .form .form-poste, .container .form .form-phone,
+.container .form .form-gsm, .container .form .form-mail, .container .form .form-postal {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.container .form .form-name input, .container .form .form-lastname input, .container .form .form-poste input, .container .form .form-phone input,
+.container .form .form-gsm input, .container .form .form-mail input, .container .form .form-postal input {
+  margin-right: 20px;
+}
+.container .form .form-name label, .container .form .form-lastname label, .container .form .form-poste label, .container .form .form-phone label,
+.container .form .form-gsm label, .container .form .form-mail label, .container .form .form-postal label {
+  margin-left: 20px;
+}
+.container .form .form-name button, .container .form .form-lastname button, .container .form .form-poste button, .container .form .form-phone button,
+.container .form .form-gsm button, .container .form .form-mail button, .container .form .form-postal button {
+  margin-bottom: 20px;
+}
+.container .result-extern {
+  border: 2px solid black;
+  height: 400px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .result-interne {
+  border: 2px solid black;
+  width: 80%;
+  height: 200px;
+}
+
+/*# sourceMappingURL=style.css.map */
