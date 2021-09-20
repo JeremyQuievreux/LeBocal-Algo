@@ -130,5 +130,3 @@ findInputElt.addEventListener('blur', () => {
         createContactDiv(contact);
     });
 })
-let findLow = findInputElt.value.toLowerCase();
-    console.log(findLow);
