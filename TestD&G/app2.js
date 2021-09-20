@@ -2,6 +2,8 @@
 const bases = document.querySelectorAll('.base');
 const box = document.querySelectorAll('.case');
 
+let currentElt;
+
 //Les fonctions
 function dragOver(e){
     e.preventDefault();
@@ -18,12 +20,12 @@ function dragLeave(){
 
 function dragDrop() {
     this.className = "case";
-    this.append();
+    this.append(currentElt);
 }  
 
 function dragStart(e) {
     this.className += " tenu";
-    console.log(e.target);
+    currentElt = e.target;
     setTimeout(() => {
         this.className = "invisible";
     }, 0);    
@@ -34,10 +36,10 @@ function dragEnd() {
 }
 
 // Les Events sur la div draggable
-for (const base of bases){
+bases.forEach(base => {
     base.addEventListener('dragstart', dragStart);
-    base.addEventListener('dragend', dragEnd);     
-}
+    base.addEventListener('dragend', dragEnd); 
+});
 
 //Les events sur les div vides    
 for (const vide of box) {

@@ -7,13 +7,17 @@ body {
 }
 
 .base {
-  background-color: turquoise;
   height: 150px;
   width: 150px;
   position: relative;
   top: 5px;
   left: 5px;
   cursor: pointer;
+  background-color: turquoise;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
 }
 
 .tenu {
@@ -30,6 +34,10 @@ body {
 .hovered {
   background-color: #f4f4f4;
   border-style: dashed;
+}
+
+.invisible {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
