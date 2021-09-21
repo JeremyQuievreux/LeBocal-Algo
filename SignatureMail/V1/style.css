@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,700;1,400&display=swap");
 body {
-  background-color: brown;
-  color: white;
   font-family: "Ubuntu", sans-serif;
 }
 
@@ -12,42 +10,76 @@ body {
   width: 100%;
 }
 .container .form {
+  background-color: brown;
+  color: white;
   border: 2px solid black;
   width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 10px;
+  margin-bottom: 40px;
+  border-radius: 20px 20px 0 0;
 }
 .container .form .form-name, .container .form .form-lastname, .container .form .form-poste, .container .form .form-phone,
 .container .form .form-gsm, .container .form .form-mail, .container .form .form-postal {
-  width: 100%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
 }
 .container .form .form-name input, .container .form .form-lastname input, .container .form .form-poste input, .container .form .form-phone input,
 .container .form .form-gsm input, .container .form .form-mail input, .container .form .form-postal input {
-  margin-right: 20px;
+  height: 25px;
+  text-align: center;
 }
-.container .form .form-name label, .container .form .form-lastname label, .container .form .form-poste label, .container .form .form-phone label,
-.container .form .form-gsm label, .container .form .form-mail label, .container .form .form-postal label {
-  margin-left: 20px;
+.container .form button {
+  margin: 20px;
+  background-color: white;
+  color: brown;
+  height: 30px;
+  width: 100px;
+  border-radius: 0px 20px;
+  border-style: none;
+  border: 2px solid black;
+  font-size: 18px;
 }
-.container .form .form-name button, .container .form .form-lastname button, .container .form .form-poste button, .container .form .form-phone button,
-.container .form .form-gsm button, .container .form .form-mail button, .container .form .form-postal button {
-  margin-bottom: 20px;
+.container .form button:hover {
+  color: white;
+  background-color: salmon;
 }
 .container .result-extern {
+  background-color: brown;
   border: 2px solid black;
-  height: 400px;
+  height: 300px;
   width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 0 0 20px 20px;
 }
 .container .result-interne {
   border: 2px solid black;
+  background-color: white;
   width: 80%;
   height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container .line1 {
+  font-size: 20px;
+  margin: 0;
+}
+.container .line2 {
+  margin: 0;
+}
+.container .line3 {
+  margin-bottom: 0;
+}
+.container .line4 {
+  margin: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
