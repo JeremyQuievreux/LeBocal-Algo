@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .form, .container .find-bar {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 20px;
+  padding-top: 30px;
+  border: 2px solid black;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  background-color: teal;
+}
+.container .find-bar {
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+.container .form-name, .container .form-lastname, .container .form-mail, .container .form-phone, .container .form-cat, .container .form-special {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin-bottom: 10px;
+}
+.container .form-cat select {
+  height: 21px;
+  margin-right: 40px;
+}
+.container .list-items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .item {
+  background-color: teal;
+  color: white;
+  font-size: 18px;
+  height: 50px;
+  width: 80%;
+  margin: 10px;
+  border-radius: 10px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.container .item .close-btn {
+  position: absolute;
+  right: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */
