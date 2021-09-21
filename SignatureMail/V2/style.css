@@ -102,23 +102,10 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.style-box .style-line1 {
+.style-box .style-line1, .style-box .element-choice {
   display: flex;
   justify-content: space-between;
   width: 80%;
 }
-
-/* .alfa{
-    font-family: 'Alfa Slab One', cursive;
-}
-.archi{
-    font-family: 'Architects Daughter', cursive;
-}
-.gluten{
-    font-family: 'Gluten', cursive;
-}
-.lobster{
-    font-family: 'Lobster', cursive;
-} */
 
 /*# sourceMappingURL=style.css.map */

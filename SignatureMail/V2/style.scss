@@ -9,10 +9,6 @@ font-family: 'Pacifico', cursive;
 font-family: 'Permanent Marker', cursive;
 font-family: 'Roboto', sans-serif;
 font-family: 'Stick No Bills', sans-serif; */
-
-
-
-
 body{
     font-family: 'Ubuntu', sans-serif;
 }
@@ -104,22 +100,10 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    .style-line1{
+    .style-line1, .element-choice{
         display: flex;
         justify-content: space-between;
         width: 80%;
     }
 
 }
-/* .alfa{
-    font-family: 'Alfa Slab One', cursive;
-}
-.archi{
-    font-family: 'Architects Daughter', cursive;
-}
-.gluten{
-    font-family: 'Gluten', cursive;
-}
-.lobster{
-    font-family: 'Lobster', cursive;
-} */

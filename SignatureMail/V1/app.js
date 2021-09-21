@@ -6,6 +6,9 @@ let inputGsmElt = document.getElementById("gsm");
 let inputMailElt = document.getElementById("mail");
 let inputPostalElt = document.getElementById("postal");
 let inputPhoneElt = document.getElementById("phone");
+
+let fontSelect = document.getElementById("font");
+let colorSelect = document.getElementById("color");
 //Variable div
 let divResult = document.querySelector(".result-interne");
 
@@ -35,4 +38,59 @@ btnValider.addEventListener("click", () => {
     let line5 = createElementP(inputPostalElt.value, "line5");
     divResult.appendChild(line5);
 
+})
+
+fontSelect.addEventListener("change", () => {
+    let value = fontSelect.value;
+    switch (value) {
+        case "":
+            divResult.style.fontFamily = "Ubuntu";
+            break;
+        case "alfa":
+            divResult.style.fontFamily = "Alfa Slab One";
+            break;
+        case "archi":
+            divResult.style.fontFamily = "Architects Daughter";
+            break;
+        case "gluten":
+            divResult.style.fontFamily = "Gluten";
+            break;
+        case "lobster":
+            divResult.style.fontFamily = "Lobster";
+            break;
+        default:
+            break;
+    }
+})
+
+colorSelect.addEventListener("change", () => {
+    let value = colorSelect.value;
+    switch (value) {
+        case "":
+            divResult.style.color = "black";
+            break;
+        case "bleu":
+            divResult.style.color = "blue";
+            break;
+        case "rouge":
+            divResult.style.color = "red";
+            break;
+        case "jaune":
+            divResult.style.color = "yellow";
+            break;
+        case "orange":            
+            divResult.style.color = "orange";
+            break;
+        case "lightblue":
+            divResult.style.color = "lightblue";
+            break;
+        case "pink":
+            divResult.style.color = "pink";
+            break;
+        case "green":            
+            divResult.style.color = "green";
+            break;
+        default:
+            break;
+    }
 })
